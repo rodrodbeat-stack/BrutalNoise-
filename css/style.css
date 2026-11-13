@@ -927,3 +927,43 @@ body{background-image:linear-gradient(90deg,#ffffff04 1px,transparent 1px),linea
 .hero h2{max-width:560px!important;line-height:1.45!important}
 .composer-tools #uploadStatus{letter-spacing:.7px!important}
 @media(max-width:700px){.left-photo{height:130px!important}.left-photo.repair-bench{height:150px!important}}
+
+/* MAIN STAGE — THREE SPACES, ONE FREE NETWORK */
+.feed{gap:17px!important}
+.hero{
+ min-height:430px!important;position:relative!important;overflow:hidden!important;
+ border:1px solid #82503b!important;
+ box-shadow:0 16px 48px #0009,inset 0 0 55px #000!important;
+}
+.hero-figure{
+ left:19%!important;right:0!important;width:auto!important;
+ background-image:
+ linear-gradient(90deg,#080706f7 0%,#080706c9 28%,#08070612 70%,#08070655 100%),
+ linear-gradient(0deg,#080706d9,transparent 52%),
+ url("https://habrastorage.org/getpro/habr/upload_files/7f4/053/cd8/7f4053cd87204d89fc0a4d88029d5e4c.png")!important;
+ background-size:cover!important;background-position:center 43%!important;
+ filter:sepia(.22) saturate(.72) contrast(1.16)!important;
+}
+.hero-text{position:relative!important;z-index:2!important;max-width:61%!important;padding:44px 34px!important}
+.hero h1{font-size:clamp(39px,5vw,66px)!important;line-height:.98!important;letter-spacing:-1px!important}
+.hero h2{max-width:450px!important;font-size:12px!important;letter-spacing:1.8px!important}
+.hero:after{content:"FREE FREQUENCY / NO MASTER / NO SILENCE"!important;position:absolute!important;right:17px!important;top:16px!important;left:auto!important;bottom:auto!important;color:#f1d5bd!important;font:8px var(--mono)!important;letter-spacing:1.5px!important;opacity:.9!important}
+.bn-mission-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.bn-mission{height:255px;position:relative;overflow:hidden;background:#0b0a09;border:1px solid #604334;min-width:0}
+.bn-mission:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#050505f5 0%,#0505059c 39%,#05050508 100%),linear-gradient(90deg,#08070644,transparent 70%);pointer-events:none}
+.bn-mission img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.32) sepia(.27) contrast(1.18) brightness(.78);transition:transform .6s,filter .5s}
+.bn-mission:hover img{transform:scale(1.055);filter:grayscale(.05) sepia(.12) contrast(1.12) brightness(.95)}
+.bn-mission-copy{position:absolute;z-index:1;left:13px;right:11px;bottom:13px}
+.bn-mission-copy small{font:7px var(--mono);letter-spacing:1px;color:#e1a17e}
+.bn-mission-copy h3{font:700 18px/1.02 var(--display);letter-spacing:.7px;color:#f1e5d8;margin:7px 0}
+.bn-mission-copy p{font:10px/1.35 var(--body);color:#d2c1b2;margin:0;max-width:270px}
+.composer{border-top:2px solid #81513c!important}
+.post-art{min-height:410px!important}
+@media(max-width:1050px){.hero{min-height:370px!important}.bn-mission{height:220px}.bn-mission-copy h3{font-size:15px}}
+@media(max-width:700px){
+ .hero{min-height:350px!important}.hero-figure{left:0!important;opacity:.72!important}
+ .hero-text{max-width:96%!important;padding:36px 18px!important}
+ .hero h1{font-size:clamp(35px,10vw,54px)!important}
+ .bn-mission-grid{grid-template-columns:1fr;gap:12px}
+ .bn-mission{height:230px}
+}
