@@ -677,3 +677,50 @@ body{background-image:linear-gradient(90deg,#ffffff04 1px,transparent 1px),linea
 .playerbar:before{content:"";position:absolute;left:0;right:0;top:-1px;height:1px;background:linear-gradient(90deg,transparent,#e34b5e 22%,#6dcbd0 52%,#e34b5e 78%,transparent);opacity:.8}
 @media(min-width:1400px){.hero{min-height:360px}.hero-figure{left:26%}.post-art{min-height:330px}}
 @media(max-width:700px){.hero{min-height:285px}.hero-figure{inset:0 0 0 12%;opacity:.65}.hero:before{background:linear-gradient(90deg,#05080df2,#05080d8a 68%,#05080d40),linear-gradient(0deg,#05080de8,transparent 60%)}.hero-text{max-width:92%;padding:24px 18px}.hero h1{font-size:30px}.hero-dots:before{display:none}.post-art{min-height:230px}.post-art:before{font-size:6px}}
+
+
+/* DETAIL PASS 06 — consistent visual assets across the whole network */
+:root{--archive-red:#e84a5e;--archive-cyan:#70cbd0}
+.mini-art{
+ position:relative;overflow:hidden;color:#f3dce0;
+ background-size:cover;background-position:center;
+ border-color:#53616a;
+ text-shadow:0 2px 8px #000;
+}
+.mini-art:after{
+ content:"";position:absolute;inset:0;
+ background:linear-gradient(135deg,#07101835,#05070cbb);
+ pointer-events:none;
+}
+.mini-art.a1{background-image:linear-gradient(0deg,#080b10aa,#080b1022),url("https://i.fbcd.co/products/resized/resized-750-500/c-1000-designbundle-humanoid-robot-abandoned-city-in-plants06-09-08-8c6cbd810fcd4b3b2089adcc3551baa0882282368e8f611d7bf7791cf3ae8b21.jpg")}
+.mini-art.a2{background-image:linear-gradient(0deg,#080b10aa,#080b1022),url("https://miro.medium.com/1%2AGdYDQ9pt0KTS3jVXPFqpig.png")}
+.mini-art.a3{background-image:linear-gradient(0deg,#080b10aa,#080b1022),url("https://miro.medium.com/v2/1%2ANSD_pP6k1L3wPq_6ZuC8dg.png")}
+.mini-art.a4{background-image:linear-gradient(0deg,#080b10aa,#080b1022),url("https://images-geeknative-com.exactdn.com/wp-content/uploads/2023/08/25104337/andrewgirdwood_prompt_artificial_intelligence_apocalyp_d0efb9e5-549d-4069-9beb-ce2310883819.jpg")}
+.story-row .avatar{position:relative;overflow:hidden;background-size:cover;background-position:center;color:#fff;text-shadow:0 2px 7px #000}
+.story-row .avatar.art1{background-image:linear-gradient(0deg,#05080caa,#05080c22),url("https://i.fbcd.co/products/resized/resized-750-500/c-1000-designbundle-humanoid-robot-abandoned-city-in-plants06-09-08-8c6cbd810fcd4b3b2089adcc3551baa0882282368e8f611d7bf7791cf3ae8b21.jpg")}
+.story-row .avatar.art2{background-image:linear-gradient(0deg,#05080caa,#05080c22),url("https://miro.medium.com/v2/1%2ANSD_pP6k1L3wPq_6ZuC8dg.png")}
+.story-row .avatar.art3{background-image:linear-gradient(0deg,#05080caa,#05080c22),url("https://miro.medium.com/1%2AGdYDQ9pt0KTS3jVXPFqpig.png")}
+.avatar.skull{background-image:linear-gradient(0deg,#05080c88,#05080c22),url("https://miro.medium.com/v2/1%2ANSD_pP6k1L3wPq_6ZuC8dg.png");background-size:cover;background-position:center;color:#fff;text-shadow:0 2px 8px #000}
+.recommend .avatar.art2{background-image:linear-gradient(0deg,#05080c88,#05080c22),url("https://miro.medium.com/v2/1%2ANSD_pP6k1L3wPq_6ZuC8dg.png");background-size:cover;background-position:center}
+.recommend .avatar.art3{background-image:linear-gradient(0deg,#05080c88,#05080c22),url("https://miro.medium.com/1%2AGdYDQ9pt0KTS3jVXPFqpig.png");background-size:cover;background-position:center}
+.recommend .avatar.art4{background-image:linear-gradient(0deg,#05080c88,#05080c22),url("https://i.fbcd.co/products/resized/resized-750-500/c-1000-designbundle-humanoid-robot-abandoned-city-in-plants06-09-08-8c6cbd810fcd4b3b2089adcc3551baa0882282368e8f611d7bf7791cf3ae8b21.jpg");background-size:cover;background-position:center}
+.reel-one:before{background-position:center,center 36%;filter:grayscale(.25) contrast(1.18)}
+.reel-two:before{background-position:center,center 30%;filter:grayscale(.3) sepia(.12) contrast(1.2)}
+.reel-three:before{background-position:center,center 42%;filter:grayscale(.2) contrast(1.18)}
+.now-playing .album{
+ background-image:linear-gradient(145deg,#11192355,#06090de8),url("https://miro.medium.com/v2/1%2ANSD_pP6k1L3wPq_6ZuC8dg.png");
+ background-size:cover;background-position:center;
+ color:#fff;text-shadow:0 2px 10px #000;
+}
+.now-playing .album:before{
+ content:"ARCHIVE / 2050";position:absolute;z-index:2;left:5px;right:5px;bottom:6px;
+ color:#f4d9dd;font:6px var(--mono);letter-spacing:.6px;text-align:center;
+}
+.left .collections p{min-height:43px}
+.collections p:hover .mini-art{border-color:#d15a68;box-shadow:0 0 14px #e23c5038}
+.story-row .avatar:before{content:"";position:absolute;inset:0;border:1px solid #ffffff33;border-radius:inherit;pointer-events:none}
+.story-row>div:first-child .avatar{background:linear-gradient(145deg,#303b45,#111820);border:1px dashed #a84b59}
+@media(max-width:700px){
+ .mini-art{width:35px;height:35px}
+ .story-row .avatar{background-position:center}
+}
