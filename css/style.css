@@ -139,3 +139,15 @@ body{background:#050609 url("https://img-cdn.pixlr.com/image-generator/demo/pixl
 .story-view strong{font:700 24px var(--display)}.story-view small{color:#bbb;font:9px var(--mono);margin-top:7px}
 .story-close{position:absolute;right:15px;top:12px;border:1px solid #fff8;background:#09090dbb;color:white;width:35px;height:35px;border-radius:50%;font-size:23px}
 .story-progress{height:3px;background:#ffffff55;margin-top:18px}.story-progress i{display:block;width:100%;height:100%;background:#ff263b}
+\n/* Supabase authentication modal + cloud media */
+#authModal{display:none;position:fixed;inset:0;z-index:100;align-items:center;justify-content:center;padding:18px;background:#000d;backdrop-filter:blur(10px)}
+#authModal.show{display:flex}.auth-card{position:relative;width:min(440px,96vw);padding:30px;border-color:#a51d30;box-shadow:0 0 35px #ff1b3544}
+.auth-card>small{font:10px var(--mono);letter-spacing:2px;color:#ff6875}.auth-card h2{font:700 25px var(--display);margin:13px 0}.auth-card h2 em{font-style:normal;color:var(--red)}
+.auth-card p{color:#aaa}.auth-close{position:absolute;right:14px;top:10px;border:0;background:none;color:white;font-size:27px}
+.auth-card form,.auth-card label{display:grid;gap:8px}.auth-card form{gap:15px}.auth-card label{font:600 13px var(--body);color:#ddd}
+.auth-card input{height:43px;border:1px solid #59434a;border-radius:8px;background:#08090c;color:white;padding:0 12px;outline:0}
+.auth-card input:focus{border-color:#ff3045;box-shadow:0 0 10px #f22a3b33}.auth-card form .red-button{height:44px}
+.auth-switch{margin-top:16px;border:0;background:none;color:#ff7782}.auth-card #authStatus{font-size:12px;min-height:18px}
+.cloud-media{display:block;width:100%;max-height:420px;object-fit:contain;background:#030406;border-radius:10px;margin:12px 0;border:1px solid #4a3038}
+.cloud-post{margin-bottom:13px}.cloud-post header{display:flex;align-items:center;gap:12px}.cloud-post header small{display:block;color:#999}.cloud-post .post-actions{border-top:1px solid #30262b;margin-top:10px;padding-top:9px;color:#999;font:10px var(--mono)}
+#publish:disabled{opacity:.5;cursor:not-allowed}
