@@ -967,3 +967,31 @@ body{background-image:linear-gradient(90deg,#ffffff04 1px,transparent 1px),linea
  .bn-mission-grid{grid-template-columns:1fr;gap:12px}
  .bn-mission{height:230px}
 }
+
+
+/* LIVE FEED — ANALOG MACHINES BACK ON STAGE */
+.post-art{
+ min-height:410px!important;height:clamp(330px,36vw,490px)!important;
+ background-image:
+  linear-gradient(0deg,#050505ed 0%,#05050535 43%,#05050508 100%),
+  url("https://img.winfuture.de/teaser/1920/81321.jpg")!important;
+ background-size:cover!important;background-position:center 43%!important;
+ border:1px solid #78513e!important;
+ box-shadow:inset 0 0 75px #0009!important;
+}
+.post-art:before{background:linear-gradient(0deg,#050505e8 0%,transparent 60%),linear-gradient(90deg,#0505054a,transparent 65%)!important}
+.post-art .city-glow{display:none!important}
+.post-art>span{left:22px!important;bottom:22px!important;max-width:78%;font:600 12px var(--mono)!important;line-height:1.6!important;letter-spacing:1.5px!important;color:#e9c5a9!important}
+.post-art>span b{display:block;font:800 clamp(18px,2.2vw,28px) var(--display)!important;color:#f1e4d7!important;letter-spacing:1px!important}
+.post-art>button{border-color:#d8a184!important;background:#160e0bcc!important;color:#f0c4a6!important;width:66px!important;height:66px!important;box-shadow:0 0 35px #000b,0 0 18px #b45d3d44!important}
+.post-art>small{font:8px var(--mono)!important;letter-spacing:1px!important;color:#e2c1a8!important}
+.stories-strip{padding:15px 17px!important;border-color:#604333!important}
+.stories-strip .side-head h3{font:600 12px var(--mono)!important;letter-spacing:1.2px!important;text-transform:uppercase}
+.story-row>div{min-width:64px}
+.story-row .avatar{border-color:#98634b!important;box-shadow:0 0 0 3px #0b0908,0 0 0 4px #593c2e!important}
+.bn-mission{border-color:#79513d!important;box-shadow:0 10px 25px #0007!important}
+.bn-mission-copy{padding:12px!important;background:linear-gradient(0deg,#05050555,transparent)!important}
+@media(max-width:700px){
+ .post-art{height:300px!important;min-height:300px!important;background-position:48% center!important}
+ .post-art>span{left:13px!important;bottom:14px!important}
+}
