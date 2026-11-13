@@ -1537,3 +1537,59 @@ body{
  .hero:after{font-size:6px!important;right:7px!important;bottom:7px!important}
  .bn-mission{height:245px!important}
 }
+
+
+/* ALLIANCE / NEW EDITORIAL MASTHEAD — RODRICKWOLF × 888 DIGITAL FACTORY */
+.bn-alliance{
+ position:relative;max-width:1600px;margin:20px auto 0;padding:17px 24px 16px 27px;
+ display:grid;grid-template-columns:180px minmax(0,1fr) auto;align-items:center;gap:20px;
+ overflow:hidden;background:
+ linear-gradient(100deg,#291713 0%,#171311 28%,#0b0c0c 68%,#1c100e 100%);
+ border:1px solid #89513d;border-left:5px solid #d16c4c;
+ box-shadow:inset 0 1px #ffffff20,0 12px 30px #0009;
+}
+.bn-alliance:before{
+ content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+ background:repeating-linear-gradient(115deg,transparent 0 34px,#ffffff08 35px,transparent 36px 70px),
+ linear-gradient(90deg,#d26c4b18,transparent 42%,#9d30251c);
+}
+.bn-alliance-kicker{position:relative;color:#e39a78;font:9px var(--mono);letter-spacing:1.7px;line-height:1.5}
+.bn-alliance-names{position:relative;display:flex;align-items:center;gap:16px;white-space:nowrap}
+.bn-alliance-names strong{font:800 clamp(15px,2vw,25px)/1 var(--display);letter-spacing:1px;color:#f1e6d9;text-shadow:0 2px 12px #000}
+.bn-alliance-names strong:last-child{color:#e5a17d}
+.bn-alliance-names strong span{color:#a9a096}
+.bn-alliance-names i{font:italic 26px Georgia;color:#d45f45}
+.bn-alliance p{position:relative;grid-column:2;margin:-8px 0 0;color:#b8a99b;font:9px var(--mono);letter-spacing:.65px}
+.bn-alliance>a{position:relative;grid-column:3;grid-row:1/3;padding:12px 14px;border:1px solid #99533e;background:linear-gradient(130deg,#713126,#241310);color:#f4d9c8;text-decoration:none;font:9px var(--mono);letter-spacing:1px;box-shadow:0 4px 0 #080707}
+.bn-alliance>a:hover{background:linear-gradient(130deg,#a64b36,#351814);color:#fff}
+.hero{margin-top:14px!important}
+.hero-figure{
+ background-image:linear-gradient(90deg,#05050500,#05050520),url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1800&q=85')!important;
+ background-position:center 48%!important;
+}
+.hero{border-radius:0!important;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,0 100%)!important}
+.hero-text{border-left:3px solid #b85a40!important;background:linear-gradient(90deg,#080605b8,transparent)!important}
+.hero .red-button{padding:14px 20px!important}
+.bn-mission-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.bn-mission{clip-path:none!important;position:relative}
+.bn-mission:nth-child(2){transform:translateY(15px)}
+.bn-mission:nth-child(3){transform:translateY(30px)}
+.bn-mission-grid{margin-bottom:44px!important}
+.bottom{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.bottom b{color:#e4a17d;letter-spacing:2px}
+@media(max-width:1050px){
+ .bn-alliance{margin-left:20px;margin-right:20px;grid-template-columns:145px 1fr}
+ .bn-alliance p{grid-column:2}
+ .bn-alliance>a{grid-column:2;grid-row:auto;justify-self:start}
+ .bn-mission:nth-child(2),.bn-mission:nth-child(3){transform:none}
+ .bn-mission-grid{margin-bottom:14px!important}
+}
+@media(max-width:700px){
+ .bn-alliance{margin:12px 10px 0;padding:15px;grid-template-columns:1fr;gap:9px}
+ .bn-alliance-names{gap:9px;flex-wrap:wrap}
+ .bn-alliance-names strong{font-size:16px}
+ .bn-alliance p,.bn-alliance>a{grid-column:1;grid-row:auto;margin:0}
+ .bn-alliance>a{justify-self:start}
+ .bn-mission-grid{grid-template-columns:1fr!important}
+ .bn-mission:nth-child(2),.bn-mission:nth-child(3){transform:none}
+}
