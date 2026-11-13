@@ -1800,3 +1800,82 @@ button:hover,.follow:hover{filter:brightness(1.22)}
  .bn-alliance{clip-path:none!important;border-radius:3px 20px 3px 14px!important}
  .bn-mission{clip-path:none!important;border-radius:3px 18px 3px 14px!important}
 }
+
+
+/* BIOMECHANICAL RUINS — CABLE VEINS CONNECTING THE SECTORS */
+body{position:relative;isolation:isolate}
+body:before{
+ content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.62;
+ background:
+  radial-gradient(ellipse at 7% 24%,transparent 0 38px,#090b0b 40px 43px,#7d3026 44px 46px,transparent 49px),
+  radial-gradient(ellipse at 93% 43%,transparent 0 52px,#080a0b 54px 57px,#a24732 58px 60px,transparent 63px),
+  radial-gradient(ellipse at 28% 86%,transparent 0 31px,#080a0b 33px 36px,#6f3028 37px 39px,transparent 42px),
+  linear-gradient(112deg,transparent 0 7%,#080a0b 7.15% 7.35%,#8b3d2b 7.4% 7.48%,#080a0b 7.55% 7.7%,transparent 7.85%),
+  linear-gradient(72deg,transparent 0 91%,#090b0c 91.1% 91.35%,#8e392a 91.4% 91.48%,#080a0b 91.55% 91.75%,transparent 91.9%),
+  repeating-linear-gradient(174deg,transparent 0 190px,#090b0c 191px 194px,#6d3027 195px 196px,#080a0b 197px 200px,transparent 201px 270px);
+ filter:drop-shadow(0 0 7px #a8342844);
+}
+.layout{position:relative}
+.layout:before{
+ content:"";position:absolute;z-index:-1;pointer-events:none;
+ left:0;right:0;top:5px;bottom:8px;opacity:.85;
+ background:
+  radial-gradient(ellipse at 18% 12%,transparent 0 8px,#080a0b 9px 12px,#9a4933 13px 14px,transparent 16px),
+  radial-gradient(ellipse at 81% 31%,transparent 0 10px,#080a0b 11px 14px,#9a4933 15px 16px,transparent 18px),
+  linear-gradient(18deg,transparent 0 18%,#07090a 18.2% 18.8%,#8d3c2b 19% 19.1%,#07090a 19.3% 19.8%,transparent 20%),
+  linear-gradient(164deg,transparent 0 68%,#07090a 68.2% 68.7%,#8d3c2b 68.9% 69%,#07090a 69.2% 69.7%,transparent 70%);
+}
+.panel,.left,.right .panel,.left-rehearsal,.post,.composer,.social-welcome,.hero,.bn-mission{
+ position:relative;isolation:isolate;
+}
+.panel:before,.left:before,.right .panel:before,.left-rehearsal:before{
+ z-index:0!important;opacity:.62;
+ background:
+  radial-gradient(ellipse at 0 50%,#b94a3522,transparent 35%),
+  repeating-linear-gradient(132deg,transparent 0 34px,#ffffff04 35px,transparent 36px 68px)!important;
+}
+.panel>* ,.left>* ,.right .panel>* ,.left-rehearsal>*{position:relative;z-index:1}
+.post:after,.composer:after,.side-card:after,.reels-card:after,.now-playing:after{
+ content:"";position:absolute;pointer-events:none;z-index:2;
+ width:46px;height:7px;right:17px;top:-4px;
+ border-radius:50%;border-top:2px solid #b84a34;
+ box-shadow:0 -3px 7px #b9362b66,0 3px 0 #080a0b;
+ transform:rotate(-12deg);
+}
+.post:before,.composer:before{
+ content:"";position:absolute;pointer-events:none;z-index:2;
+ left:18px;top:-1px;width:54px;height:12px;
+ border-left:2px solid #75392d;border-bottom:2px solid #a44732;
+ border-radius:0 0 0 16px;opacity:.9;
+}
+.stories-strip,.feed-tabs,.bn-alliance,.hero,.bn-mission{
+ box-shadow:inset 0 1px #ffffff19,0 13px 27px #000b,0 0 24px #a3342820!important;
+}
+.left-rehearsal{
+ border-left:3px solid #8e3b2c!important;
+}
+.left-photo:before{
+ content:"";position:absolute;z-index:2;left:8px;top:8px;width:24px;height:24px;
+ border-left:2px solid #d15a40;border-top:2px solid #d15a40;
+ filter:drop-shadow(0 0 5px #d33b2d);
+ pointer-events:none;
+}
+.factory:after{
+ content:"CABLE LINK // SECTOR 03";
+ display:block;margin-top:6px;color:#d27b5b;font:7px var(--mono);
+ letter-spacing:1.5px;opacity:.85;
+}
+.system{position:relative;overflow:hidden}
+.system:after{
+ content:"";position:absolute;left:-30%;top:0;width:45%;height:100%;
+ background:linear-gradient(90deg,transparent,#c83c2b25,transparent);
+ transform:skewX(-25deg);animation:skynetPulse 5s linear infinite;
+}
+@keyframes skynetPulse{to{left:130%}}
+.post-art:after{box-shadow:0 0 15px #c73a2d66!important}
+.reel-tile:before{height:5px!important;box-shadow:0 0 12px #e14432aa}
+@media(max-width:700px){
+ body:before{opacity:.32}
+ .layout:before{opacity:.3}
+ .post:after,.composer:after,.side-card:after,.reels-card:after,.now-playing:after{right:9px}
+}
