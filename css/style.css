@@ -1368,3 +1368,172 @@ body{
  .hero-text{width:100%!important}
  .bn-mission{box-shadow:0 7px 0 #090909,0 12px 22px #0009!important}
 }
+
+
+/* APOCALYPSE MODE — BRUTAL NOISE // INDUSTRIAL COLLAPSE 2050 */
+:root{
+ --ash:#bcb4a8;--bone:#eee5d8;--blood:#b51e24;--hot:#ef513e;
+ --rust:#91442f;--copper:#bd7650;--soot:#050505;
+}
+body{
+ background-color:#050505!important;
+ background-image:
+  radial-gradient(ellipse at 78% 12%,#76251d35 0,transparent 30%),
+  radial-gradient(ellipse at 10% 55%,#6b39251c 0,transparent 35%),
+  repeating-linear-gradient(117deg,transparent 0 78px,#ffffff05 79px,#0000 81px 155px),
+  repeating-linear-gradient(0deg,#ffffff05 0 1px,transparent 1px 6px),
+  linear-gradient(180deg,#0b0a09 0%,#11100e 38%,#050505 100%)!important;
+}
+.topbar{
+ background:
+  linear-gradient(90deg,#050505 0%,#211512 45%,#080808 100%)!important;
+ border-bottom:2px solid #9b3028!important;
+}
+.topbar:after{
+ content:"EMERGENCY BROADCAST // CIVILIZATION OFFLINE";
+ position:absolute;right:28px;bottom:-1px;padding:3px 9px;
+ background:#8c1e1b;color:#f4d6c4;font:8px var(--mono);
+ letter-spacing:1.4px;transform:translateY(100%);
+ box-shadow:0 4px 15px #000b;
+}
+.layout{position:relative}
+.layout:before{
+ content:"";position:fixed;inset:76px 0 0;pointer-events:none;z-index:-1;
+ background:
+  linear-gradient(115deg,transparent 0 48%,#a33d2510 48.2%,transparent 49%),
+  radial-gradient(ellipse at 50% 60%,transparent 35%,#0009 100%);
+}
+.panel,.left,.right .panel,.left-rehearsal{
+ position:relative;isolation:isolate;overflow:hidden;
+}
+.panel:before,.left:before,.right .panel:before{
+ content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+ background:
+  linear-gradient(135deg,#ffffff0b,transparent 23%),
+  repeating-linear-gradient(132deg,transparent 0 34px,#ffffff04 35px,transparent 36px 68px);
+}
+.hero{
+ height:clamp(480px,42vw,610px)!important;
+ background:#090706!important;
+ border:1px solid #9c392c!important;
+ box-shadow:inset 0 0 0 5px #050505,inset 0 0 90px #000,
+  0 0 0 1px #32120f,0 22px 55px #000!important;
+}
+.hero-figure{
+ background-position:center 42%!important;
+ filter:grayscale(.72) sepia(.25) contrast(1.42) brightness(.63)!important;
+}
+.hero:before{
+ background:
+  linear-gradient(90deg,#050505f7 0%,#080605e8 27%,#100907a8 49%,#10090718 78%,#05050585 100%),
+  linear-gradient(0deg,#050505f5 0%,#05050555 32%,transparent 68%),
+  radial-gradient(ellipse at 75% 42%,#b43d2722,transparent 42%)!important;
+}
+.hero:after{
+ content:"// ZONA DE EXCLUSIÓN 07 // NO HAY AUTORIDAD // LA SEÑAL SOBREVIVE"!important;
+ writing-mode:horizontal-tb!important;top:auto!important;bottom:14px!important;
+ right:16px!important;left:auto!important;
+ padding:7px 10px;background:#090605c9;border:1px solid #8b3428;
+ color:#f07a59!important;font:8px var(--mono)!important;
+ letter-spacing:1.3px!important;
+}
+.hero-text{width:72%!important;max-width:760px!important;padding:45px 40px!important}
+.hero-text>small{
+ border-left:4px solid #ed563f!important;
+ letter-spacing:2.4px!important;
+}
+.hero h1{
+ font-size:clamp(46px,6.8vw,92px)!important;
+ letter-spacing:-4px!important;line-height:.86!important;
+}
+.hero h2{
+ max-width:480px!important;text-transform:uppercase;
+ border-left:2px solid #b54c38;padding-left:13px;
+}
+.free-stamp{
+ transform:skew(-5deg);letter-spacing:2px!important;
+}
+.bn-mission-grid{gap:11px!important}
+.bn-mission{
+ height:275px!important;clip-path:polygon(0 0,calc(100% - 13px) 0,100% 13px,100% 100%,0 100%);
+ border:1px solid #75402f!important;
+}
+.bn-mission:before{
+ content:"";position:absolute;z-index:2;top:0;left:0;width:42px;height:5px;
+ background:linear-gradient(90deg,#d64c36,#7d211d);
+ box-shadow:0 0 16px #d64c3655;
+}
+.bn-mission img{
+ filter:grayscale(.7) sepia(.35) contrast(1.3) brightness(.65)!important;
+}
+.bn-mission:hover img{filter:grayscale(.2) sepia(.2) contrast(1.2) brightness(.88)!important}
+.bn-mission-copy{border-top:1px solid #9b513a55}
+.bn-mission-copy small{letter-spacing:1.7px!important}
+.bn-mission-copy h3{font-size:clamp(17px,1.6vw,23px)!important}
+.stories-strip{border-left:3px solid #a43b2d!important}
+.stories-strip .side-head h3:before{
+ content:"●";color:#ec503b;margin-right:9px;
+ text-shadow:0 0 9px #ef513e;
+}
+.left-rehearsal{
+ background:
+  linear-gradient(145deg,#30201a 0%,#15100e 35%,#070808 100%)!important;
+ border-color:#8a4b35!important;
+}
+.left-rehearsal-head:after{
+ content:"SECTOR 03 // POWER RESTORED";
+ display:block;margin-top:4px;padding:5px 7px;
+ background:repeating-linear-gradient(135deg,#b47a36 0 7px,#17120e 7px 14px);
+ color:#080706;font:800 7px var(--mono);letter-spacing:1.1px;
+}
+.left-photo{height:120px!important;border-color:#8b503a!important}
+.left-photo:after{
+ content:"";position:absolute;inset:0;pointer-events:none;
+ background:linear-gradient(115deg,#bd603022,transparent 40%,#0008);
+}
+.left-manifesto{
+ background:linear-gradient(90deg,#4b1c17aa,transparent);
+ padding:11px 8px!important;
+}
+.post,.composer,.section,.side-card,.reels-card,.now-playing{
+ border-top:1px solid #79503d!important;
+}
+.post header .verified{background:#a84232!important}
+.post-art{
+ position:relative;isolation:isolate;
+ background-blend-mode:normal!important;
+ filter:contrast(1.08);
+}
+.post-art:after{
+ content:"RECOVERED FOOTAGE // 2050";
+ position:absolute;top:13px;left:13px;z-index:2;
+ padding:6px 8px;border:1px solid #b45a43;
+ background:#090706c9;color:#f1b99d;
+ font:8px var(--mono);letter-spacing:1.5px;
+}
+.post-art>button{z-index:3}
+.reel-tile{position:relative;overflow:hidden}
+.reel-tile:before{
+ content:"";position:absolute;z-index:1;left:0;right:0;top:0;height:4px;
+ background:repeating-linear-gradient(90deg,#d65b43 0 12px,#1a100d 12px 20px);
+}
+.reel-tile span{text-shadow:2px 2px #000,0 0 14px #000!important}
+.factory{clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,0 100%)}
+.system b{color:#e4a17d!important;text-shadow:0 0 10px #c94d35!important}
+.playerbar{border-top:2px solid #a63d30!important}
+.playerbar:before{
+ content:"";position:absolute;left:0;right:0;top:-5px;height:3px;
+ background:repeating-linear-gradient(90deg,#b94a35 0 28px,transparent 28px 36px);
+ opacity:.8;
+}
+.bottom{
+ border-top:1px solid #54352b;padding-top:14px!important;
+}
+@media(max-width:700px){
+ .topbar:after{display:none}
+ .hero{height:420px!important;min-height:420px!important}
+ .hero-text{width:100%!important;padding:32px 18px!important}
+ .hero h1{font-size:clamp(40px,12vw,62px)!important}
+ .hero:after{font-size:6px!important;right:7px!important;bottom:7px!important}
+ .bn-mission{height:245px!important}
+}
