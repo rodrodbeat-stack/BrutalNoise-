@@ -113,14 +113,14 @@ footer{border-top:1px solid #2a0d12;margin-top:6px}
 @media(max-width:1200px){.app{grid-template-columns:250px minmax(0,1fr) 280px;gap:10px;padding:8px}.tag{display:none}}
 @media(max-width:900px){.app{grid-template-columns:200px minmax(0,1fr) 230px}.sys{display:none}.ov{font-size:18px}.rl .cp h3{font-size:20px}.pr img{width:64px;height:64px}.ctl{gap:18px}.comp .t{min-width:100px}}
 @media(max-width:640px){.app{grid-template-columns:minmax(0,1fr)}.chat{position:static}.chat>.p:first-child{height:480px}#reels,.rl{height:560px}.ic{display:none}.pr img{width:92px;height:92px}}
-</style></head><body>
+\n.audio-preview{width:100%;display:none;align-items:center;gap:10px;padding:10px 12px;border:1px solid #6a1018;background:linear-gradient(90deg,#21070b,#090a0e);color:#eee}.audio-preview.on{display:flex}.audio-preview strong{color:#ff5360;font:11px "Share Tech Mono";overflow-wrap:anywhere}.audio-preview small{color:#8b8e9b}.audio-preview button{margin-left:auto;color:#ff5360}.audio-post{width:100%;margin:12px 0;padding:12px;border:1px solid #6a1018;background:#090a0e}.audio-post audio{width:100%;height:42px;accent-color:#ff1e2d}.audio-post .audio-label{font:11px "Share Tech Mono";color:#ff5360;letter-spacing:2px;margin-bottom:8px}.audio-status{width:100%;font:11px "Share Tech Mono";color:#2ee6b0;min-height:16px}\n</style></head><body>
 <header class="top"><div class="logo"><svg viewBox="0 0 52 36"><path d="M2 18h6l3-12 4 24 4-20 4 14 3-6h8l2-4 3 8h5" fill="none" stroke="#ff1e2d" stroke-width="2.5" stroke-linejoin="round"/></svg><h1>CYBERREELS<em>SKYNET</em></h1></div><div class="tag">› MUSIC FOR A HIGHER REALITY</div><div class="sys"><i></i>SYSTEM ONLINE</div><div class="ic"><span>⌕</span><span>⚙</span><span>☻</span></div></header>
 <div class="app">
 <div class="col chat"><section class="p"><div class="ph"><b>›</b>FACTORY CHAT<a style="color:var(--grn)">● EN LÍNEA (12)</a></div><div id="convs"></div><div class="room"><div class="rh" id="rh"></div><div id="msgs"></div><form id="cf"><input id="ci" placeholder="Transmitir mensaje seguro..." autocomplete="off"><button>↗</button></form></div></section><section class="p art"><img id="sideArt" alt=""><div>“LA MÚSICA NO SOLO SE ESCUCHA... SE SIENTE EN EL NÚCLEO.”<small>— NEURAL AUDIO 2050</small></div></section><div class="ver">v2.5.0<br>BUILD 2026.10.05</div></div>
 <div class="col">
 <section class="p hero"><img id="heroArt" alt=""><small><b>›</b> BIENVENIDO AL</small><h2>NEURAL AUDIO <em>2050</em></h2><small>SONIDOS QUE ACTIVAN TU REALIDAD</small><button class="init" id="init"><span>◉</span>INITIALIZE AUDIO</button></section>
 <section class="p"><div class="ph"><b>›</b>ÁLBUMES DESTACADOS<a>VER TODOS →</a></div><div class="albums" id="albums"></div></section>
-<section class="p comp"><img class="av" id="meAv" alt=""><input class="t" id="ct" placeholder="¿Qué estás fabricando?"><button class="cb" id="bImg">▧ FOTO</button><button class="cb" id="bVid">▣ VIDEO</button><button class="pub" id="pub">PUBLICAR ↗</button><input type="file" id="file" hidden><div class="prev" id="prev"><span id="pm"></span><span id="pn" style="flex:1;color:var(--mut)"></span><button class="cb" id="px">✕</button></div></section>
+<section class="p comp"><img class="av" id="meAv" alt=""><input class="t" id="ct" placeholder="¿Qué estás fabricando?"><button class="cb" id="bImg">▧ FOTO</button><button class="cb" id="bVid">▣ VIDEO</button><button class="cb" id="bAudio">♫ AUDIO</button><button class="pub" id="pub">PUBLICAR ↗</button><input type="file" id="file" hidden><input type="file" id="audioFile" accept="audio/mpeg,audio/wav,audio/ogg,audio/mp4,audio/aac,audio/flac" hidden><div class="audio-preview" id="audioPreview"><span>♫</span><div style="min-width:0"><strong id="audioName"></strong><br><small id="audioSize"></small></div><button type="button" id="audioRemove">✕</button></div><div class="audio-status" id="audioStatus" aria-live="polite"></div><div class="prev" id="prev"><span id="pm"></span><span id="pn" style="flex:1;color:var(--mut)"></span><button class="cb" id="px">✕</button></div></section>
 <div class="tabs"><button class="on" data-t="feed">● FEED</button><button data-t="reels">▣ REELS</button></div>
 <div id="feed"></div>
 <div id="rbox" hidden><div class="rb"><button class="pub" id="rUp">⬆ SUBIR REEL (VIDEO O FOTO)</button><button class="ar" id="rP">▲</button><span id="rC">1 / 1</span><button class="ar" id="rN">▼</button><input type="file" id="rfile" accept="video/*,image/*" hidden></div><div id="reels" tabindex="0"></div></div>
@@ -219,4 +219,83 @@ const cv=$("#cv"),cx=cv.getContext("2d");let ph=0;
 function vz(){const D=devicePixelRatio,w=cv.width=cv.clientWidth*D,h=cv.height=cv.clientHeight*D;cx.clearRect(0,0,w,h);const N=Math.floor(w/(7*D)),d=an?new Uint8Array(an.frequencyBinCount):null;if(d&&playing)an.getByteFrequencyData(d);ph+=.05;cx.strokeStyle="#ff1e2d";cx.shadowColor="#ff1e2d";cx.shadowBlur=8;cx.lineWidth=2*D;
 for(let i=0;i<N;i++){const k=i/N,e=1-Math.abs(k*2-1);let v=(playing&&d)?d[Math.floor(k*60)]/255:(Math.abs(Math.sin(i*.5+ph))*.35+.1)*(.4+e);v=Math.max(.04,v*(.4+e*.8));const x=(i+.5)*w/N,y=v*h*.45;cx.beginPath();cx.moveTo(x,h/2-y);cx.lineTo(x,h/2+y);cx.stroke()}requestAnimationFrame(vz)}
 load(0,0);draw();vz();cnt();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+/* BRUTAL NOISE — publicación de audio persistente en Supabase */
+(()=> {
+ const $=s=>document.querySelector(s);
+ const URL="https://pwywjfrwqbzsqvhkcmtr.supabase.co";
+ const KEY="sb_publishable_Rr_v0IbRX_ajJxHryUCzxQ__nZmQxgH";
+ const db=window.supabase?.createClient(URL,KEY,{auth:{persistSession:true,autoRefreshToken:true}});
+ if(!db){console.error("Supabase SDK no disponible");return}
+ let guest=null,track=null,busy=false;
+ const status=m=>$("#audioStatus").textContent=m;
+ const size=n=>n<1048576?(n/1024).toFixed(0)+" KB":(n/1048576).toFixed(1)+" MB";
+ async function identity(){
+  const {data:{session},error}=await db.auth.getSession();if(error)throw error;
+  if(session?.user)return session.user;
+  const {data,error:authError}=await db.auth.signInAnonymously({options:{data:{display_name:"Operador BrutalNoise"}}});
+  if(authError)throw authError;if(!data.user)throw new Error("No se pudo crear identidad invitada");return data.user;
+ }
+ function clearTrack(){track=null;$("#audioFile").value="";$("#audioPreview").classList.remove("on")}
+ $("#bAudio").addEventListener("click",()=>$("#audioFile").click());
+ $("#audioRemove").addEventListener("click",clearTrack);
+ $("#audioFile").addEventListener("change",e=>{
+  const f=e.target.files?.[0];if(!f)return;
+  const allowed=/\.(mp3|wav|ogg|m4a|aac|flac)$/i.test(f.name);
+  if(!allowed){status("FORMATO NO ADMITIDO · MP3 / WAV / OGG / M4A / AAC / FLAC");e.target.value="";return}
+  if(f.size>100*1024*1024){status("ARCHIVO SUPERIOR AL LÍMITE DE 100 MB");e.target.value="";return}
+  track=f;$("#audioName").textContent=f.name;$("#audioSize").textContent=size(f.size)+" · LISTO PARA TRANSMITIR";$("#audioPreview").classList.add("on");status("PISTA PREPARADA · "+f.name);
+ });
+ /* Evita que el publicador local duplique la publicación cuando hay audio adjunto. */
+ $("#pub").addEventListener("click",async e=>{
+  if(!track)return;
+  e.preventDefault();e.stopImmediatePropagation();
+  if(busy)return;busy=true;$("#pub").disabled=true;
+  status("CONECTANDO CON NEURAL CLOUD...");
+  let path=null;
+  try{
+   guest=guest||await identity();
+   const f=track,caption=$("#ct").value.trim();
+   const ext=(f.name.split(".").pop()||"mp3").toLowerCase().replace(/[^a-z0-9]/g,"");
+   path=guest.id+"/"+crypto.randomUUID()+"."+ext;
+   status("SUBIENDO AUDIO · "+size(f.size));
+   const {error:up}=await db.storage.from("neural-media").upload(path,f,{contentType:f.type||"audio/mpeg",upsert:false});
+   if(up)throw up;
+   const {data:row,error:ins}=await db.from("posts").insert({user_id:guest.id,content:caption,media_path:path,media_type:f.type||"audio/mpeg"}).select("id,content,media_path,media_type,created_at").single();
+   if(ins)throw ins;
+   const {data:pub}=db.storage.from("neural-media").getPublicUrl(path);
+   const card=document.createElement("article");card.className="p post";
+   const h=document.createElement("div");h.className="phd";h.innerHTML='<img class="av" alt=""><div><b class="u"></b><small>Ahora · Audio comunitario</small></div>';
+   h.querySelector(".u").textContent="Operador BrutalNoise";
+   const label=document.createElement("div");label.className="audio-label";label.textContent="♫ TRANSMISIÓN DE AUDIO // RECUPERANDO LO OLVIDADO";
+   const player=document.createElement("div");player.className="audio-post";
+   const audio=document.createElement("audio");audio.controls=true;audio.preload="metadata";audio.src=pub.publicUrl;
+   const name=document.createElement("p");name.className="tx";name.textContent=f.name;
+   player.append(label,name,audio);card.append(h);if(caption){const p=document.createElement("p");p.className="tx";p.textContent=caption;card.append(p)}card.append(player);$("#feed").prepend(card);
+   $("#ct").value="";clearTrack();status("AUDIO PUBLICADO · DISPONIBLE PARA TODA LA COMUNIDAD ✓");if(typeof log==="function")log("AUDIO TRANSMITTED TO NEURAL CLOUD");
+  }catch(err){console.error("Audio upload:",err);status("ERROR DE AUDIO: "+(err.message||"revisa Supabase Storage / RLS"))}
+  finally{busy=false;$("#pub").disabled=false}
+ },true);
+ async function restore(){
+  try{
+   guest=await identity();
+   const {data,error}=await db.from("posts").select("id,user_id,content,media_path,media_type,created_at").like("media_type","audio/%").order("created_at",{ascending:false}).limit(30);
+   if(error)throw error;
+   (data||[]).reverse().forEach(p=>{
+    const {data:pub}=db.storage.from("neural-media").getPublicUrl(p.media_path);
+    const card=document.createElement("article");card.className="p post";
+    const h=document.createElement("div");h.className="phd";h.innerHTML='<img class="av" alt=""><div><b class="u"></b><small></small></div>';
+    h.querySelector(".u").textContent="Neural community";h.querySelector("small").textContent=new Date(p.created_at).toLocaleString("es-CL")+" · Audio";
+    const player=document.createElement("div");player.className="audio-post";
+    const label=document.createElement("div");label.className="audio-label";label.textContent="♫ TRANSMISIÓN DE AUDIO";
+    const audio=document.createElement("audio");audio.controls=true;audio.preload="none";audio.src=pub.publicUrl;
+    player.append(label,audio);card.append(h);if(p.content){const t=document.createElement("p");t.className="tx";t.textContent=p.content;card.append(t)}card.append(player);$("#feed").append(card);
+   });
+   status("NEURAL CLOUD ONLINE · AUDIO COMUNITARIO SINCRONIZADO");
+  }catch(err){console.error("Audio cloud:",err);status("CLOUD NO DISPONIBLE: "+(err.message||"activa Anonymous Sign-Ins"))}
+ }
+ restore();
+})();
 </script></body></html>	
