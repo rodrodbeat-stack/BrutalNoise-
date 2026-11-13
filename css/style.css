@@ -912,3 +912,18 @@ body{background-image:linear-gradient(90deg,#ffffff04 1px,transparent 1px),linea
 .left,.feed,.right{min-width:0}
 @media(max-width:1050px){.left-rehearsal{margin:14px 9px}.left-photo{height:100px}}
 @media(max-width:700px){.left-rehearsal{display:block}.left-photo{height:145px}.left .factory{margin-top:14px!important}}
+
+/* DIGNITY WORKSHOP — PRODUCTION, REPAIR, REBIRTH */
+.left-rehearsal{padding:11px!important;background:linear-gradient(160deg,#19130f 0%,#0b0a09 70%)!important;border-color:#79503b!important}
+.left-rehearsal-head b{font-size:13px!important;letter-spacing:1.7px!important}
+.left-photo{height:108px!important;margin-bottom:10px!important;border-color:#72503d!important}
+.left-photo img{object-position:center 48%!important}
+.left-photo.repair-bench{height:128px!important}
+.left-photo.repair-bench img{filter:grayscale(.42) sepia(.32) contrast(1.16) brightness(.8)!important}
+.left-photo.repair-bench:hover img{filter:grayscale(.1) sepia(.15) contrast(1.12) brightness(.98)!important}
+.left-manifesto{margin-top:3px!important;padding:10px 5px 5px!important;font-size:7px!important;line-height:1.9!important;border-top:1px solid #79503b!important;color:#c4a58d!important}
+.left-manifesto strong{display:inline-block;color:#f0c5a7!important;font-size:9px!important;letter-spacing:1px!important;margin-bottom:3px}
+.left-manifesto span{color:#df7655!important;font-weight:700}
+.hero h2{max-width:560px!important;line-height:1.45!important}
+.composer-tools #uploadStatus{letter-spacing:.7px!important}
+@media(max-width:700px){.left-photo{height:130px!important}.left-photo.repair-bench{height:150px!important}}
