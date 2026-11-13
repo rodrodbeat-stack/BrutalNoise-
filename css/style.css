@@ -995,3 +995,174 @@ body{background-image:linear-gradient(90deg,#ffffff04 1px,transparent 1px),linea
  .post-art{height:300px!important;min-height:300px!important;background-position:48% center!important}
  .post-art>span{left:13px!important;bottom:14px!important}
 }
+
+
+/* FINAL ART DIRECTION — TERMINATOR / CYBER BRUTAL PUNK / BLACK METAL */
+:root{
+ --bg:#050505;--surface:#0b0b0b;--surface2:#11100f;--line:#302b28;
+ --line-hot:#8d1b20;--red:#d51f27;--red2:#ff343c;--cyan:#9aa49a;
+ --text:#e8e4dc;--muted:#827c76;--display:Orbitron,sans-serif;
+ --body:'Barlow Condensed',sans-serif;--mono:'IBM Plex Mono',monospace;
+}
+body{
+ background:
+ radial-gradient(ellipse at 50% 0%,#351012 0,transparent 34%),
+ repeating-linear-gradient(0deg,#ffffff03 0 1px,transparent 1px 5px),
+ #050505!important;
+ color:#e8e4dc!important;
+}
+.topbar{
+ height:76px!important;background:#050505f2!important;
+ border-bottom:2px solid #8d171d!important;box-shadow:0 8px 35px #000!important;
+}
+.brand-mark{color:#ff202b!important;text-shadow:0 0 9px #ff202b,0 0 28px #a30000!important}
+.brand strong{font-size:20px!important;letter-spacing:3px!important}
+.brand small{color:#a34b45!important;letter-spacing:2.5px!important}
+.search{border:1px solid #4c2826!important;border-radius:0!important;background:#090808!important}
+.layout{
+ max-width:1760px!important;grid-template-columns:258px minmax(430px,1fr) 310px!important;
+ gap:14px!important;margin-top:16px!important;
+}
+.panel,.post,.side-card,.reels-card,.now-playing{
+ border-radius:0!important;border:1px solid #3a302c!important;
+ background:linear-gradient(145deg,#11100f 0%,#080808 72%)!important;
+ box-shadow:0 12px 32px #000b,inset 0 1px #ffffff08!important;
+}
+.left{padding:12px!important;background:#080808!important;border:1px solid #382622!important}
+.sidenav a{
+ border-radius:0!important;font:700 13px var(--mono)!important;
+ letter-spacing:1px!important;text-transform:uppercase;
+}
+.sidenav a.active{background:linear-gradient(90deg,#5b0d12,#160809 80%)!important;border-left:3px solid #ff2631!important;color:#fff!important}
+.collections{border-color:#382a27!important}
+.collections h4,.section-head small,.side-head h3{color:#d35a4e!important}
+.factory{border-radius:0!important;border-color:#a21e23!important;background:linear-gradient(100deg,#3b090d,#0a0808)!important}
+.system{border-radius:0!important;border-color:#4d2422!important;background:#0b0808!important;color:#e84a40!important}
+.feed{gap:14px!important;display:flex!important;flex-direction:column!important}
+.hero{
+ min-height:480px!important;height:clamp(430px,38vw,560px)!important;
+ margin:0!important;border:1px solid #842026!important;border-radius:0!important;
+ background:#070606!important;box-shadow:0 0 0 1px #160707,0 18px 55px #000!important;
+}
+.hero-figure{
+ left:0!important;right:0!important;width:100%!important;opacity:1!important;
+ background-image:
+ linear-gradient(90deg,#050505 0%,#050505e8 20%,#05050566 52%,#05050512 100%),
+ linear-gradient(0deg,#050505e8 0%,transparent 55%),
+ url("https://images-geeknative-com.exactdn.com/wp-content/uploads/2023/08/25104337/andrewgirdwood_prompt_artificial_intelligence_takeover_apocalyp_d0efb9e5-549d-4069-9beb-ce2310883819.jpg?lossy=1&sharp=1&ssl=1&strip=all")!important;
+ background-size:cover!important;background-position:center 38%!important;
+ filter:grayscale(.8) contrast(1.45) brightness(.65)!important;
+ mask-image:none!important;
+}
+.hero:before{
+ background:linear-gradient(90deg,#050505f5 0%,#050505d9 30%,#05050536 74%,#05050555 100%),
+ repeating-linear-gradient(0deg,#ffffff0a 0 1px,transparent 1px 4px)!important;
+}
+.hero-text{
+ left:0!important;right:auto!important;top:50%!important;transform:translateY(-50%)!important;
+ width:66%!important;max-width:700px!important;padding:42px 38px!important;
+}
+.hero-text>small{
+ display:inline-block!important;padding:8px 10px!important;border:1px solid #a52a2d!important;
+ background:#100707d9!important;color:#ff5a50!important;font:9px var(--mono)!important;
+ letter-spacing:2px!important;
+}
+.hero h1{
+ font:800 clamp(42px,6vw,82px)/.92 var(--display)!important;
+ letter-spacing:-3px!important;color:#f1eee8!important;
+ text-shadow:4px 5px 0 #45080b,0 0 30px #e31d2733!important;
+ margin:20px 0 14px!important;
+}
+.hero h1 em{color:#ed252e!important}
+.free-stamp{
+ display:inline-block!important;border:1px solid #a62a2b!important;
+ background:#150809!important;color:#f3d7c8!important;padding:8px 11px!important;
+ font:9px var(--mono)!important;letter-spacing:2px!important;
+}
+.hero h2{
+ max-width:520px!important;color:#d0c6bd!important;font:600 13px/1.55 var(--mono)!important;
+ letter-spacing:1.5px!important;margin:18px 0 24px!important;
+}
+.hero .red-button,.red-button{
+ border-radius:0!important;background:linear-gradient(110deg,#b20f1b,#4b080d)!important;
+ border:1px solid #ed343a!important;box-shadow:4px 4px 0 #260609!important;
+ letter-spacing:1.4px!important;
+}
+.hero:after{
+ content:"NO GODS / NO MASTERS / NO SILENCE"!important;
+ position:absolute!important;right:15px!important;top:17px!important;left:auto!important;bottom:auto!important;
+ writing-mode:vertical-rl!important;color:#ff514a!important;font:9px var(--mono)!important;
+ letter-spacing:3px!important;opacity:.95!important;
+}
+.hero-dots{left:38px!important;transform:none!important}
+.bn-mission-grid{gap:8px!important}
+.bn-mission{
+ height:230px!important;border-radius:0!important;border:1px solid #5c2927!important;
+ background:#080707!important;box-shadow:5px 5px 0 #16090a!important;
+}
+.bn-mission:after{
+ background:linear-gradient(0deg,#030303 0%,#030303d9 25%,#03030318 100%)!important;
+}
+.bn-mission img{filter:grayscale(.72) contrast(1.28) brightness(.7)!important}
+.bn-mission:hover img{filter:grayscale(.18) contrast(1.2) brightness(.9)!important}
+.bn-mission-copy small{color:#ff6258!important;font:8px var(--mono)!important;letter-spacing:1.5px!important}
+.bn-mission-copy h3{font:800 19px/1 var(--display)!important;color:#f4eee8!important;text-shadow:2px 2px #630e12!important}
+.bn-mission-copy p{font:12px/1.35 var(--body)!important;color:#c7bdb5!important}
+.stories-strip{border-radius:0!important}
+.stories-strip .side-head h3{font:700 10px var(--mono)!important;letter-spacing:1.5px!important}
+.composer,.post,.section{border-radius:0!important}
+.composer{border-top:2px solid #a41d24!important}
+.composer-top input,.comment-box input,#chatForm input{border-radius:0!important;background:#050505!important;border-color:#49302c!important}
+.composer-tools{font:11px var(--mono)!important}
+.post header strong{font:700 14px var(--mono)!important;letter-spacing:.5px!important}
+.post>p{font:15px/1.5 var(--body)!important;color:#d6d0c8!important}
+.post>p a{color:#ff5a50!important}
+.post-art{
+ border-radius:0!important;border:1px solid #852328!important;
+ box-shadow:inset 0 0 100px #000!important;
+}
+.post-art>button{border-radius:0!important;background:#170607e8!important;border:1px solid #ed373b!important}
+.post-actions{border-top:1px solid #3d2927!important}
+.post-actions button{color:#c9bdb5!important}
+.right{display:flex!important;flex-direction:column!important;gap:14px!important}
+.right .panel{border-radius:0!important}
+.reel-tile{border-radius:0!important;border-color:#722126!important;filter:grayscale(.45) contrast(1.15)!important}
+.reel-tile span{font:800 13px var(--display)!important;letter-spacing:1px!important;color:#fff!important}
+.recommend{border-bottom:1px solid #2d2422!important}
+.follow{border-radius:0!important;border:1px solid #8b292b!important;background:#170809!important;color:#ff665c!important}
+.avatar{border-radius:2px!important;border-color:#923036!important;background:#150809!important}
+.left-rehearsal{border-radius:0!important;background:#0b0808!important;border-color:#79252a!important}
+.left-photo{border-radius:0!important;border-color:#7a2b2d!important}
+.left-photo img{filter:grayscale(.72) contrast(1.25) brightness(.68)!important}
+.left-manifesto{border-color:#772329!important}
+.left-manifesto strong,.left-manifesto span{color:#ff554d!important}
+.section-head h2{font:800 18px var(--display)!important;letter-spacing:1px!important}
+.track-list,.sequencer{border-radius:0!important}
+.playerbar{
+ border-radius:0!important;border-top:2px solid #9e2026!important;
+ background:#050505f5!important;box-shadow:0 -12px 40px #000!important;
+}
+.playerbar button,.player-controls .main-play{color:#ff514a!important}
+.playing-art{border-radius:0!important;border:1px solid #8e282a!important}
+.bottom{font:9px var(--mono)!important;letter-spacing:1.5px!important;color:#f05a50!important}
+::selection{background:#a20e19;color:#fff}
+@keyframes bn-signal{0%,100%{opacity:.75}50%{opacity:1}}
+.hero-text>small,.system b{animation:bn-signal 2.6s infinite}
+@media(max-width:1050px){
+ .layout{grid-template-columns:220px minmax(0,1fr)!important}
+ .right{display:none!important}
+ .hero{height:420px!important;min-height:420px!important}
+}
+@media(max-width:700px){
+ .layout{display:flex!important;flex-direction:column!important;padding:0 10px!important}
+ .left{position:static!important;width:100%!important}
+ .hero{height:390px!important;min-height:390px!important}
+ .hero-text{width:95%!important;padding:25px 17px!important}
+ .hero h1{font-size:clamp(35px,10vw,54px)!important;letter-spacing:-2px!important}
+ .hero h2{font-size:10px!important}
+ .hero-figure{background-position:58% center!important}
+ .bn-mission-grid{grid-template-columns:1fr!important}
+ .bn-mission{height:215px!important}
+ .composer-tools{padding-left:0!important;flex-wrap:wrap!important}
+ .composer-tools #uploadStatus{width:100%!important;margin:4px 0 0!important}
+}
