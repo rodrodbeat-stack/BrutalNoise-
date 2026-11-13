@@ -724,3 +724,58 @@ body{background-image:linear-gradient(90deg,#ffffff04 1px,transparent 1px),linea
  .mini-art{width:35px;height:35px}
  .story-row .avatar{background-position:center}
 }
+
+
+/* DETAIL PASS 07 — PHOTO ARCHIVE: FORGOTTEN MACHINES & 2000s MUSIC GEAR */
+.hero{background:#07090c}
+.hero-figure{
+  left:22%!important;right:0!important;width:auto!important;height:100%!important;
+  background-image:
+    linear-gradient(90deg,#07090c 0%,#07090c55 25%,#07090c08 68%,#07090c55 100%),
+    linear-gradient(0deg,#07090c99,transparent 48%),
+    url("https://images-geeknative-com.exactdn.com/wp-content/uploads/2023/08/25104337/andrewgirdwood_prompt_artificial_intelligence_takeover_apocalyp_d0efb9e5-549d-4069-9beb-ce2310883819.jpg?lossy=1&sharp=1&ssl=1&strip=all")!important;
+  background-size:cover!important;background-position:center 42%!important;
+  opacity:1!important;filter:grayscale(.24) sepia(.16) contrast(1.22) brightness(.76)!important;
+  mask-image:linear-gradient(90deg,transparent 0%,#000 18%,#000 100%)!important;
+}
+.hero:before{background:linear-gradient(90deg,#05080df5 0%,#05080dbd 26%,#05080d20 68%,#05080d66 100%),linear-gradient(0deg,#05080dd9 0%,transparent 48%),repeating-linear-gradient(0deg,transparent 0 5px,#ffffff08 6px,transparent 7px 10px)!important}
+.post-art{
+  background-image:linear-gradient(0deg,#03060de8 0%,#03060d15 58%,#03060d25 100%),url("https://trinodj.wordpress.com/wp-content/uploads/2019/05/mworz.jpg?crop=1&h=702&w=1024")!important;
+  background-size:cover!important;background-position:center 48%!important;
+  filter:saturate(.76) contrast(1.14);
+}
+.post-art .city-glow{display:none}
+.post-art>span{z-index:3;padding:10px 13px;background:linear-gradient(90deg,#05080ddd,transparent);border-left:2px solid #ed5265}
+.post-art>button{z-index:4}
+.post-art>small{z-index:4}
+.mini-art.a1{background-image:linear-gradient(0deg,#080b10aa,#080b1022),url("https://djtechreviews.com/images/news/generated/detroit-electronic-music-museum-plans-halted.webp")!important}
+.mini-art.a2{background-image:linear-gradient(0deg,#080b10aa,#080b1022),url("https://trinodj.wordpress.com/wp-content/uploads/2019/05/mworz.jpg?crop=1&h=702&w=1024")!important}
+.mini-art.a3{background-image:linear-gradient(0deg,#080b10aa,#080b1022),url("https://dj-maik-belgern.de/uploads/wp-migrate/2025/08/clubsterben.png")!important}
+.mini-art.a4{background-image:linear-gradient(0deg,#080b10aa,#080b1022),url("https://i.fbcd.co/products/resized/resized-750-500/c-1000-designbundle-humanoid-robot-abandoned-city-in-plants06-09-08-8c6cbd810fcd4b3b2089adcc3551baa0882282368e8f611d7bf7791cf3ae8b21.jpg")!important}
+.reel-one:before{
+ background-image:linear-gradient(0deg,#05080de8,transparent 75%),url("https://dj-maik-belgern.de/uploads/wp-migrate/2025/08/clubsterben.png")!important;
+ background-size:cover!important;background-position:center 48%!important;
+}
+.reel-two:before{
+ background-image:linear-gradient(0deg,#05080de8,transparent 75%),url("https://djtechreviews.com/images/news/generated/detroit-electronic-music-museum-plans-halted.webp")!important;
+ background-size:cover!important;background-position:center 55%!important;
+}
+.reel-three:before{
+ background-image:linear-gradient(0deg,#05080de8,transparent 75%),url("https://images-geeknative-com.exactdn.com/wp-content/uploads/2023/08/25104337/andrewgirdwood_prompt_artificial_intelligence_takeover_apocalyp_d0efb9e5-549d-4069-9beb-ce2310883819.jpg?lossy=1&sharp=1&ssl=1&strip=all")!important;
+ background-size:cover!important;background-position:center 42%!important;
+}
+.story-row .avatar.art1{background-image:linear-gradient(0deg,#05080c99,#05080c15),url("https://i.fbcd.co/products/resized/resized-750-500/c-1000-designbundle-humanoid-robot-abandoned-city-in-plants06-09-08-8c6cbd810fcd4b3b2089adcc3551baa0882282368e8f611d7bf7791cf3ae8b21.jpg")!important}
+.story-row .avatar.art2{background-image:linear-gradient(0deg,#05080c99,#05080c15),url("https://trinodj.wordpress.com/wp-content/uploads/2019/05/mworz.jpg?crop=1&h=702&w=1024")!important}
+.story-row .avatar.art3{background-image:linear-gradient(0deg,#05080c99,#05080c15),url("https://djtechreviews.com/images/news/generated/detroit-electronic-music-museum-plans-halted.webp")!important}
+.recommend .avatar.art2{background-image:linear-gradient(0deg,#05080c99,#05080c15),url("https://dj-maik-belgern.de/uploads/wp-migrate/2025/08/clubsterben.png")!important;background-size:cover!important}
+.recommend .avatar.art3{background-image:linear-gradient(0deg,#05080c99,#05080c15),url("https://images-geeknative-com.exactdn.com/wp-content/uploads/2023/08/25104337/andrewgirdwood_prompt_artificial_intelligence_takeover_apocalyp_d0efb9e5-549d-4069-9beb-ce2310883819.jpg?lossy=1&sharp=1&ssl=1&strip=all")!important;background-size:cover!important}
+.recommend .avatar.art4{background-image:linear-gradient(0deg,#05080c99,#05080c15),url("https://djtechreviews.com/images/news/generated/detroit-electronic-music-museum-plans-halted.webp")!important;background-size:cover!important}
+.now-playing .album,.playing-art{
+ background-image:linear-gradient(145deg,#05080c22,#05080ce8),url("https://trinodj.wordpress.com/wp-content/uploads/2019/05/mworz.jpg?crop=1&h=702&w=1024")!important;
+ background-size:cover!important;background-position:center!important;
+}
+@media(max-width:700px){
+ .hero-figure{left:8%!important;opacity:.82!important;background-position:43% center!important}
+ .hero:before{background:linear-gradient(90deg,#05080df0 0%,#05080d9a 52%,#05080d35 100%),linear-gradient(0deg,#05080de8,transparent 65%)!important}
+ .post-art{min-height:230px;background-position:center!important}
+}
