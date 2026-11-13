@@ -779,3 +779,97 @@ body{background-image:linear-gradient(90deg,#ffffff04 1px,transparent 1px),linea
  .hero:before{background:linear-gradient(90deg,#05080df0 0%,#05080d9a 52%,#05080d35 100%),linear-gradient(0deg,#05080de8,transparent 65%)!important}
  .post-art{min-height:230px;background-position:center!important}
 }
+
+
+/* DETAIL PASS 08 — THE 2050 LOST MUSIC ARCHIVE */
+:root{--rust:#a66a4d;--signal:#8bd9dc}
+.hero{min-height:390px!important;border-color:#73515a!important}
+.hero-figure{
+ left:13%!important;right:0!important;width:auto!important;
+ background-image:
+ linear-gradient(90deg,#05080df5 0%,#05080d8c 25%,#05080d08 63%,#05080d66 100%),
+ linear-gradient(0deg,#05080dc9,transparent 52%),
+ url("https://img-v3.deepdreamgenerator.com/4852435/ooowup_3d4692fda984eae1b5282101cec872c2b95c5848.jpg?v=2")!important;
+ background-size:cover!important;background-position:center 44%!important;
+ filter:grayscale(.18) sepia(.14) contrast(1.2) brightness(.76)!important;
+ mask-image:linear-gradient(90deg,transparent 0%,#000 12%,#000 100%)!important;
+}
+.hero-text{max-width:53%!important;padding:38px 32px!important}
+.hero-text>small{border-color:#87515a!important;color:#e6aab0!important}
+.hero h1{font-size:clamp(31px,3.5vw,51px)!important}
+.hero:after{opacity:.12!important}
+.post-art{
+ min-height:360px!important;
+ background-image:
+ linear-gradient(0deg,#03060df2 0%,#03060d12 54%,#03060d08 100%),
+ url("https://smileradio.net/sites/default/files/inline/manager/musik_dj.jpg")!important;
+ background-size:cover!important;background-position:center 52%!important;
+ filter:grayscale(.12) sepia(.12) contrast(1.13)!important;
+}
+.post-art:before{
+ content:"RECOVERED CLUB / 2003 — ARCHIVE 2050"!important;
+ top:13px!important;left:13px!important;right:auto!important;bottom:auto!important;
+ border:1px solid #b78b7c66!important;background:#080b10c9!important;
+ color:#e6d5cb!important;font:8px var(--mono)!important;letter-spacing:1.3px!important;
+}
+.post-art:after{
+ content:"LAST SIGNAL // TURNTABLES STILL REMEMBER"!important;
+ top:auto!important;left:13px!important;right:auto!important;bottom:13px!important;
+ color:#c6d1d5!important;font:8px var(--mono)!important;letter-spacing:1px!important;
+}
+.post-art .city-glow{display:none!important}
+.post-art>span{left:4%!important;bottom:45px!important;font-size:clamp(16px,2vw,23px)!important}
+.stories-strip{border-color:#4a3b40!important}
+.story-row .avatar.art1{
+ background-image:linear-gradient(0deg,#05080c99,#05080c10),url("https://i.fbcd.co/products/resized/resized-750-500/c-1000-designbundle-humanoid-robot-abandoned-city-in-plants06-09-08-8c6cbd810fcd4b3b2089adcc3551baa0882282368e8f611d7bf7791cf3ae8b21.jpg")!important;
+}
+.story-row .avatar.art2{
+ background-image:linear-gradient(0deg,#05080c99,#05080c10),url("https://smileradio.net/sites/default/files/inline/manager/musik_dj.jpg")!important;
+}
+.story-row .avatar.art3{
+ background-image:linear-gradient(0deg,#05080c99,#05080c10),url("https://djtechreviews.com/images/news/generated/detroit-electronic-music-museum-plans-halted.webp")!important;
+}
+.story-row .avatar{background-size:cover!important;background-position:center!important}
+.mini-art.a1{background-image:linear-gradient(0deg,#080b10aa,#080b1022),url("https://img-v3.deepdreamgenerator.com/4852435/ooowup_3d4692fda984eae1b5282101cec872c2b95c5848.jpg?v=2")!important}
+.mini-art.a2{background-image:linear-gradient(0deg,#080b10aa,#080b1022),url("https://smileradio.net/sites/default/files/inline/manager/musik_dj.jpg")!important}
+.mini-art.a3{background-image:linear-gradient(0deg,#080b10aa,#080b1022),url("https://djtechreviews.com/images/news/generated/detroit-electronic-music-museum-plans-halted.webp")!important}
+.mini-art.a4{background-image:linear-gradient(0deg,#080b10aa,#080b1022),url("https://miro.medium.com/v2/resize%3Afit%3A1200/1%2AGdYDQ9pt0KTS3jVXPFqpig.png")!important}
+.reel-one:before{
+ background-image:linear-gradient(0deg,#05080df2,transparent 72%),url("https://smileradio.net/sites/default/files/inline/manager/musik_dj.jpg")!important;
+ background-size:cover!important;background-position:center 48%!important;
+}
+.reel-two:before{
+ background-image:linear-gradient(0deg,#05080df2,transparent 72%),url("https://djtechreviews.com/images/news/generated/detroit-electronic-music-museum-plans-halted.webp")!important;
+ background-size:cover!important;background-position:center 58%!important;
+}
+.reel-three:before{
+ background-image:linear-gradient(0deg,#05080df2,transparent 72%),url("https://img-v3.deepdreamgenerator.com/4852435/ooowup_3d4692fda984eae1b5282101cec872c2b95c5848.jpg?v=2")!important;
+ background-size:cover!important;background-position:center 42%!important;
+}
+.reel-tile{height:164px!important;border-color:#6c5154!important}
+.reel-tile span{font-size:14px!important;text-shadow:0 3px 14px #000!important}
+.recommend .avatar.art2{background-image:linear-gradient(0deg,#05080c88,#05080c10),url("https://smileradio.net/sites/default/files/inline/manager/musik_dj.jpg")!important;background-size:cover!important}
+.recommend .avatar.art3{background-image:linear-gradient(0deg,#05080c88,#05080c10),url("https://img-v3.deepdreamgenerator.com/4852435/ooowup_3d4692fda984eae1b5282101cec872c2b95c5848.jpg?v=2")!important;background-size:cover!important}
+.recommend .avatar.art4{background-image:linear-gradient(0deg,#05080c88,#05080c10),url("https://djtechreviews.com/images/news/generated/detroit-electronic-music-museum-plans-halted.webp")!important;background-size:cover!important}
+.album,.playing-art{
+ background-image:linear-gradient(145deg,#05080c22,#05080ce8),url("https://smileradio.net/sites/default/files/inline/manager/musik_dj.jpg")!important;
+ background-size:cover!important;background-position:center!important;
+}
+.now-playing .album{width:66px;height:66px}
+.now-playing .now-track{padding:5px 0}
+.now-playing .album:before{content:"CLUB 2003 / RECOVERED"!important;font-size:5px!important}
+.post,.side-card,.reels-card,.now-playing{border-color:#39454e}
+.post header{margin-bottom:3px}
+.post>p{font-size:14px!important}
+@media(min-width:1400px){
+ .hero{min-height:420px!important}
+ .post-art{min-height:390px!important}
+ .reel-tile{height:178px!important}
+}
+@media(max-width:700px){
+ .hero{min-height:300px!important}
+ .hero-figure{left:0!important;opacity:.72!important;background-position:48% center!important}
+ .hero-text{max-width:94%!important;padding:26px 17px!important}
+ .hero h1{font-size:clamp(23px,7vw,34px)!important}
+ .post-art{min-height:245px!important;background-position:center!important}
+}
