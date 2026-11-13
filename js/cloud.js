@@ -27,10 +27,10 @@
   $('#uploadStatus').textContent=user?'CUENTA CONECTADA · NEURAL NETWORK':'INICIA SESIÓN PARA PUBLICAR';
  }
  async function loadFeed(){
-  const {data,error}=await db.from('posts').select('id,user_id,content,media_path,media_type,created_at,profiles(username,display_name,avatar_url)').order('created_at',{ascending:false}).limit(30);
+  const {data,error}=await db.from('posts').select('id,user_id,content,media_path,media_type,created_at').order('created_at',{ascending:false}).limit(30);
   if(error){console.warn('Feed Supabase:',error.message);return}
   document.querySelectorAll('.cloud-post').forEach(n=>n.remove());
-  for(const p of data||[]){const card=document.createElement('article');card.className='post panel cloud-post';const name=p.profiles?.display_name||p.profiles?.username||'Neural member';const when=new Date(p.created_at).toLocaleString('es-CL',{dateStyle:'short',timeStyle:'short'});let media='';
+  for(const p of data||[]){const card=document.createElement('article');card.className='post panel cloud-post';const name='Neural member';const when=new Date(p.created_at).toLocaleString('es-CL',{dateStyle:'short',timeStyle:'short'});let media='';
    if(p.media_path){const {data:pub}=db.storage.from('neural-media').getPublicUrl(p.media_path);const url=pub.publicUrl;media=p.media_type?.startsWith('image/')?'<img class="cloud-media" src="'+esc(url)+'" alt="Contenido compartido">':p.media_type?.startsWith('video/')?'<video class="cloud-media" src="'+esc(url)+'" controls playsinline></video>':p.media_type?.startsWith('audio/')?'<audio class="cloud-media" src="'+esc(url)+'" controls></audio>':''}
    card.innerHTML='<header><b class="avatar">NA</b><div><strong>'+esc(name)+'</strong><small>'+when+' · Comunidad</small></div></header>'+(p.content?'<p>'+esc(p.content)+'</p>':'')+media+'<div class="post-actions"><span>NEURAL AUDIO 2050</span></div>';
    $('#community').before(card);
