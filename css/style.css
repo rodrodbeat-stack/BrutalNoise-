@@ -251,7 +251,7 @@ body{background:#030405;font-family:Arial,sans-serif;padding-bottom:76px}.topbar
  background-image:
   linear-gradient(90deg,rgba(3,5,8,.03) 0%,rgba(3,5,8,.08) 48%,rgba(5,7,10,.96) 100%),
   linear-gradient(0deg,rgba(3,5,8,.58),transparent 55%),
-  url("https://img-v3.deepdreamgenerator.com/1271664/md_o9ujg4_a1d59a56fcab22524eb1f40932477fb20b261812.jpg");
+  url("https://i.fbcd.co/products/resized/resized-750-500/c-1000-designbundle-humanoid-robot-abandoned-city-in-plants06-09-08-8c6cbd810fcd4b3b2089adcc3551baa0882282368e8f611d7bf7791cf3ae8b21.jpg");
  background-size:cover;background-position:center,center,center 44%;
  filter:saturate(.68) contrast(1.2);
  opacity:.98;
@@ -263,7 +263,7 @@ body{background:#030405;font-family:Arial,sans-serif;padding-bottom:76px}.topbar
  background-image:
   linear-gradient(0deg,rgba(2,5,9,.94),rgba(2,5,9,.05) 62%),
   linear-gradient(90deg,rgba(4,7,10,.08),rgba(4,7,10,.1)),
-  url("https://wallpapershome.com/images/wallpapers/robot-wallpaper-3840x2160-technology-artificial-intelligence-26082.jpg");
+  url("https://miro.medium.com/v2/1%2ANSD_pP6k1L3wPq_6ZuC8dg.png");
  background-position:center,center,center 43%;
  background-size:cover;
 }
@@ -279,15 +279,60 @@ body{background:#030405;font-family:Arial,sans-serif;padding-bottom:76px}.topbar
  background-size:cover;background-position:center 35%;
 }
 .reel-three:before{
- background-image:linear-gradient(0deg,#020409ed,transparent 90%),url("https://wallpapershome.com/images/wallpapers/robot-wallpaper-3840x2160-technology-artificial-intelligence-26082.jpg");
+ background-image:linear-gradient(0deg,#020409ed,transparent 90%),url("https://miro.medium.com/v2/1%2ANSD_pP6k1L3wPq_6ZuC8dg.png");
  background-size:cover;background-position:center 50%;
 }
 .reel-tile{border-color:#69414a;box-shadow:inset 0 0 25px #0008}
 .reel-tile:after{background:linear-gradient(0deg,#020409f5 0%,#02040918 78%),linear-gradient(90deg,#ed263b18,transparent 70%)}
-.stories-strip .art1{background-image:linear-gradient(#090b10aa,#090b10aa),url("https://img-v3.deepdreamgenerator.com/1271664/md_o9ujg4_a1d59a56fcab22524eb1f40932477fb20b261812.jpg");background-size:cover;background-position:center}
+.stories-strip .art1{background-image:linear-gradient(#090b10aa,#090b10aa),url("https://i.fbcd.co/products/resized/resized-750-500/c-1000-designbundle-humanoid-robot-abandoned-city-in-plants06-09-08-8c6cbd810fcd4b3b2089adcc3551baa0882282368e8f611d7bf7791cf3ae8b21.jpg");background-size:cover;background-position:center}
 .stories-strip .art2{background-image:linear-gradient(#090b10aa,#090b10aa),url("https://i.fbcd.co/products/resized/resized-750-500/c-1000-designbundle-humanoid-robot-abandoned-city-in-plants06-09-08-8c6cbd810fcd4b3b2089adcc3551baa0882282368e8f611d7bf7791cf3ae8b21.jpg");background-size:cover;background-position:center}
 .stories-strip .art3{background-image:linear-gradient(#090b10aa,#090b10aa),url("https://images-geeknative-com.exactdn.com/wp-content/uploads/2023/08/25104337/andrewgirdwood_prompt_artificial_intelligence_apocalyp_d0efb9e5-549d-4069-9beb-ce2310883819.jpg");background-size:cover;background-position:center}
 @media(max-width:700px){
  .hero-figure{width:100%;opacity:.68}
  .post-art{background-position:center,center,center}
 }
+
+
+/* FINAL ART DIRECTION — THE FORGOTTEN ROBOTS, YEAR 2050 */
+.hero-figure{
+ background-image:
+  linear-gradient(90deg,#03060908 0%,#03060918 47%,#05080df2 100%),
+  linear-gradient(0deg,#030609a8,transparent 58%),
+  url("https://i.fbcd.co/products/resized/resized-750-500/c-1000-designbundle-humanoid-robot-abandoned-city-in-plants06-09-08-8c6cbd810fcd4b3b2089adcc3551baa0882282368e8f611d7bf7791cf3ae8b21.jpg");
+ background-size:cover;background-position:center,center,center 44%;
+ filter:grayscale(.28) sepia(.16) saturate(.8) contrast(1.22);
+}
+.hero:after{opacity:.28;background:repeating-linear-gradient(0deg,transparent 0 2px,#dce5ed 3px,transparent 4px 6px),linear-gradient(120deg,transparent 35%,#ed263b0c 60%,transparent 78%)}
+.hero-text:after{
+ content:"ARCHIVE // UNIT 07\A STATUS: ABANDONED\A LAST SIGNAL: 2049.11.08";
+ white-space:pre;display:block;margin-top:14px;color:#9caab2;
+ font:8px/1.8 var(--mono);letter-spacing:1.3px;opacity:.78;
+}
+.hero-text>small:before{content:"● ";color:#ed263b;text-shadow:0 0 8px #ed263b}
+.post-art{
+ background-image:
+  linear-gradient(0deg,#02050bf2 0%,#02050b08 70%),
+  linear-gradient(90deg,#08111b40,transparent 70%),
+  url("https://miro.medium.com/v2/1%2ANSD_pP6k1L3wPq_6ZuC8dg.png");
+ background-size:cover;background-position:center,center,center 42%;
+ filter:saturate(.78) contrast(1.13);
+}
+.post-art:after{content:"UNIT 09 // MEMORY CORE OFFLINE";position:absolute;top:14px;left:15px;bottom:auto;width:auto;height:auto;transform:none;border:1px solid #d84a5b66;border-radius:2px;padding:6px 9px;background:#07090bb8;color:#ff7583;font:8px var(--mono);letter-spacing:1px;box-shadow:none}
+.post-art>small{border:1px solid #ffffff30;letter-spacing:1px}
+.reel-one:before{
+ background-image:linear-gradient(0deg,#020409ed,transparent 90%),url("https://i.fbcd.co/products/resized/resized-750-500/c-1000-designbundle-humanoid-robot-abandoned-city-in-plants06-09-08-8c6cbd810fcd4b3b2089adcc3551baa0882282368e8f611d7bf7791cf3ae8b21.jpg");
+}
+.reel-two:before{
+ background-image:linear-gradient(0deg,#020409ed,transparent 90%),url("https://miro.medium.com/1%2AGdYDQ9pt0KTS3jVXPFqpig.png");
+}
+.reel-three:before{
+ background-image:linear-gradient(0deg,#020409ed,transparent 90%),url("https://miro.medium.com/v2/1%2ANSD_pP6k1L3wPq_6ZuC8dg.png");
+}
+.reel-tile:after{background:linear-gradient(0deg,#020409f5 0%,#02040908 76%),repeating-linear-gradient(0deg,transparent 0 3px,#ffffff0b 4px,transparent 5px 7px)}
+.reel-tile>b{padding:4px 6px;border:1px solid #ff526266;background:#080b10b8;color:#ff7886}
+.stories-strip .art1,.stories-strip .art2,.stories-strip .art3{background-size:cover;background-position:center;filter:saturate(.72) contrast(1.12)}
+.left .factory{box-shadow:inset 0 0 20px #ed263b13,0 0 16px #ed263b16}
+.system{position:relative;overflow:hidden}
+.system:after{content:"";position:absolute;left:0;top:0;width:100%;height:1px;background:linear-gradient(90deg,transparent,#6fe0a2,transparent);animation:systemScan 4s linear infinite}
+@keyframes systemScan{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+@media(max-width:700px){.hero-text:after{font-size:7px;margin-top:8px}.post-art:after{font-size:7px}}
