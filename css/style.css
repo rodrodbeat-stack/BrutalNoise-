@@ -98,3 +98,44 @@ body{background:#050609 url("https://img-cdn.pixlr.com/image-generator/demo/pixl
 @media(max-width:1300px){.layout{grid-template-columns:245px minmax(0,1fr) 340px}.brand{min-width:370px}.story-row .avatar{width:62px;height:62px}}
 @media(max-width:1000px){.layout{grid-template-columns:230px minmax(0,1fr)}.right{display:none}.brand{min-width:300px}}
 @media(max-width:720px){.topbar{height:66px;padding:0 9px;gap:7px}.brand{min-width:0;gap:5px}.brand-mark{width:36px;height:38px}.brand strong{font-size:10px}.brand small{font-size:6px}.layout{display:block;margin:0;padding:0 8px 94px}.hero{height:210px}.hero-figure{width:43%}.hero-text{left:35%;width:63%;top:30%}.hero h1{font-size:clamp(15px,4.2vw,24px)}.hero h2{font-size:8px;letter-spacing:1.5px}.composer-top .avatar{width:43px;height:43px}.composer-tools{padding-left:2px;gap:14px}.post-art{height:170px}.playerbar{height:72px;padding:6px 8px}.playing-meta{min-width:85px}.player-controls{gap:7px;margin:0}.player-controls .main-play{width:39px;height:39px}.progress{display:none}}
+
+/* FINAL VISUAL PASS — cinematic assets and reference proportions */
+.hero{
+ background-image:linear-gradient(90deg,#05070b05 0%,#05070b0a 36%,#05070b88 100%),url("https://assets.st-note.com/production/uploads/images/234928978/rectangle_large_type_2_32699b39338bf3ed19da649f89b3e06b.png?width=1280");
+ background-position:center 46%;background-size:cover;
+}
+.hero-figure{
+ background-image:linear-gradient(90deg,#0000 58%,#08080eaa 100%),url("https://cdn2.suno.ai/image_large_3ba69ed8-4b04-4927-9dfb-609ef3595e2f.jpeg");
+ background-position:center 28%;background-size:cover;
+ border-right:1px solid #ff354544;
+}
+.hero:before{background:linear-gradient(90deg,#05060a00 0 33%,#07080b33 48%,#06070bbd 100%),linear-gradient(0deg,#02030755,transparent 60%)}
+.hero-text{z-index:3}
+.hero-dots{z-index:4;left:50%;transform:translateX(-50%);gap:8px}
+.hero-dots button{width:10px;height:10px;padding:0;border:0;border-radius:50%;background:#a7a5ab;box-shadow:0 0 4px #000}
+.hero-dots button.active{background:#ff1e33;box-shadow:0 0 10px #ff243b}
+.post-art{
+ background-image:linear-gradient(0deg,#03050bd9 0%,#03050b05 70%),url("https://vivago.ai/_ipx/f_webp%2Cjpg%26q_80/https%3A/storage.vivago.ai/image/p_624b1b52-a053-11ef-9df6-42044b7b1577.jpg");
+ background-position:center 48%;background-size:cover;
+}
+.post-art:before{background:linear-gradient(0deg,#02050be8 0%,transparent 62%)}
+.post-art:after{display:none}
+.post-art>span{display:block;left:6%;bottom:15px;font:700 18px var(--display);letter-spacing:1px;text-shadow:0 2px 9px #000}
+.story-row .avatar,.story .avatar,.story-art{position:relative;overflow:hidden}
+.story-row .avatar:after,.story .avatar:after,.story-art:after{content:"";position:absolute;inset:0;border-radius:inherit;border:1px solid #ffffff35;pointer-events:none}
+.side-card,.now-playing{background:linear-gradient(145deg,#101014f7,#050608f7)}
+.right .side-card:first-child{min-height:195px}
+.right .side-card:nth-child(2){min-height:330px}
+.playerbar{backdrop-filter:blur(12px)}
+.playing-art{background-image:linear-gradient(135deg,#11182755,#07080b88),url("https://assets.st-note.com/production/uploads/images/234928978/rectangle_large_type_2_32699b39338bf3ed19da649f89b3e06b.png?width=1280");background-size:cover;background-position:center}
+@media(max-width:720px){.hero-figure{width:42%;background-position:39% center}.hero-text{left:34%;width:64%}.hero-dots{bottom:7px}}
+
+#storyModal{position:fixed;inset:0;z-index:60;display:none;align-items:center;justify-content:center;background:#000d;backdrop-filter:blur(9px);padding:18px}
+#storyModal.show{display:flex}
+.story-view{position:relative;width:min(390px,92vw);height:min(690px,84vh);overflow:hidden;border:1px solid #ff3448;border-radius:20px;background:#090a0e;box-shadow:0 0 35px #f22a3b55;display:flex;flex-direction:column;justify-content:flex-end;padding:25px}
+.story-view-art{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.84}
+.story-view:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(0deg,#050609 0%,transparent 100%)}
+.story-view strong,.story-view small,.story-progress,.story-close{position:relative;z-index:2}
+.story-view strong{font:700 24px var(--display)}.story-view small{color:#bbb;font:9px var(--mono);margin-top:7px}
+.story-close{position:absolute;right:15px;top:12px;border:1px solid #fff8;background:#09090dbb;color:white;width:35px;height:35px;border-radius:50%;font-size:23px}
+.story-progress{height:3px;background:#ffffff55;margin-top:18px}.story-progress i{display:block;width:100%;height:100%;background:#ff263b}
