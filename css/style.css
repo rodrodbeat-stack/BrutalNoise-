@@ -234,3 +234,9 @@ body{background:#030405;font-family:Arial,sans-serif;padding-bottom:76px}.topbar
   .layout{grid-template-columns:250px minmax(440px,1fr) 320px;gap:18px}
   .right{padding-top:220px}
 }
+
+
+/* Align right rail with hero, as in the supplied reference screenshot */
+@media (min-width:1400px){
+  .right{padding:278px 0 22px 0}
+}
