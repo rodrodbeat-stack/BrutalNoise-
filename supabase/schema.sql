@@ -22,6 +22,10 @@ create table if not exists public.posts (
   )
 );
 
+-- Compatibilidad con instalaciones anteriores: CREATE TABLE IF NOT EXISTS no agrega columnas faltantes.
+alter table public.posts
+  add column if not exists content text not null default '';
+
 create table if not exists public.comments (
   id uuid primary key default gen_random_uuid(),
   post_id uuid not null references public.posts(id) on delete cascade,
@@ -198,3 +202,7 @@ grant insert, update on public.profiles to authenticated;
 grant insert, update, delete on public.posts to authenticated;
 grant insert, delete on public.comments, public.likes, public.follows to authenticated;
 grant select, insert on public.chat_messages to authenticated;
+
+
+-- Refresca la caché de esquema usada por la API REST de Supabase.
+notify pgrst, 'reload schema';
