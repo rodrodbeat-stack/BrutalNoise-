@@ -638,3 +638,42 @@ body{
  .section{padding:14px}
  .bottom{line-height:1.8}
 }
+
+
+/* DETAIL PASS 05 — abandoned-factory atmosphere and stronger art direction */
+body{background-image:linear-gradient(90deg,#ffffff04 1px,transparent 1px),linear-gradient(#ffffff03 1px,transparent 1px),radial-gradient(ellipse at 52% 18%,#26344055,transparent 48%),radial-gradient(ellipse at 8% 82%,#55172220,transparent 34%),#07090c;background-size:42px 42px,42px 42px,auto,auto,auto}
+.layout{align-items:start}
+.left,.right>.panel,.stories-strip,.composer,.post,.section{position:relative}
+.left:after,.right>.panel:after,.stories-strip:after,.composer:after,.post:after,.section:after{content:"";position:absolute;pointer-events:none;inset:5px;border:1px solid #ffffff06;opacity:.8}
+.left:after,.right>.panel:after{inset:6px}
+.hero{min-height:338px;border-color:#74404a;background:linear-gradient(115deg,#080b10 0%,#0c1117 44%,#11151a 100%)}
+.hero:before{content:"";position:absolute;z-index:2;inset:0;pointer-events:none;background:linear-gradient(90deg,#05080df5 0%,#05080dbd 38%,#05080d20 74%,#05080d66 100%),linear-gradient(0deg,#05080dd9 0%,transparent 42%),repeating-linear-gradient(0deg,transparent 0 5px,#ffffff08 6px,transparent 7px 10px)}
+.hero-figure{position:absolute;inset:0 0 0 30%;z-index:0;background-position:center,center,center 38%;filter:grayscale(.35) sepia(.19) contrast(1.24) brightness(.78)}
+.hero-person,.hero-city{opacity:.2;mix-blend-mode:screen}
+.hero-text{position:relative;z-index:3;max-width:58%;padding:34px 30px}
+.hero-text>small{font:9px var(--mono);letter-spacing:1.6px;color:#e1a1a8}
+.hero h1{max-width:430px;font-size:clamp(30px,3.25vw,48px);line-height:1.04}
+.hero h2{font:600 11px/1.8 var(--mono);letter-spacing:1.15px;color:#c1cbd1}
+.hero-dots{z-index:4}
+.hero-dots:before{content:"SIGNAL FEED // 2050";margin-right:12px;color:#9aa7b0;font:8px var(--mono);letter-spacing:1px}
+.stories-strip,.composer,.post,.section,.right>.panel,.left{background-image:linear-gradient(135deg,#ffffff05,transparent 38%),repeating-linear-gradient(135deg,transparent 0 18px,#ffffff03 19px,transparent 20px 36px)}
+.stories-strip .side-head a,.right .side-head a{font:9px var(--mono);letter-spacing:.5px}
+.composer-top input{font-size:12px;letter-spacing:.1px}
+.composer-tools label{transition:transform .18s,border-color .18s,background .18s}
+.composer-tools label:hover{transform:translateY(-2px);background:#1b1117}
+.post header .avatar{position:relative}
+.post header .avatar:after{content:"";position:absolute;right:-2px;bottom:-2px;width:7px;height:7px;border:1px solid #07100d;border-radius:50%;background:#67d6a0;box-shadow:0 0 8px #67d6a0}
+.post-art{min-height:300px;position:relative}
+.post-art:before{content:"RECOVERED FOOTAGE // SECTOR 09";position:absolute;right:12px;top:14px;z-index:2;padding:5px 7px;border:1px solid #ffffff35;background:#05080db8;color:#c2cbd1;font:7px var(--mono);letter-spacing:1.1px}
+.post-art:after{content:"UNIT 09 // MEMORY CORE OFFLINE";top:auto;left:14px;bottom:14px;right:auto}
+.reels-card .reel-tile{min-height:145px}
+.reel-tile:before{filter:grayscale(.2) contrast(1.16) brightness(.82)}
+.reel-tile:hover:before{filter:grayscale(0) contrast(1.18) brightness(1)}
+.reel-tile b{font:8px var(--mono);letter-spacing:1px}
+.reel-tile small{position:absolute;right:10px;bottom:10px;color:#d5dce1}
+.recommend .avatar{box-shadow:0 0 0 2px #0b1015,0 0 12px #e23c5022}
+.now-playing .album{position:relative;overflow:hidden;background:linear-gradient(145deg,#29343d,#080b10 72%)}
+.now-playing .album:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 3px,#ffffff12 4px,transparent 5px 7px)}
+.playerbar:before{content:"";position:absolute;left:0;right:0;top:-1px;height:1px;background:linear-gradient(90deg,transparent,#e34b5e 22%,#6dcbd0 52%,#e34b5e 78%,transparent);opacity:.8}
+@media(min-width:1400px){.hero{min-height:360px}.hero-figure{left:26%}.post-art{min-height:330px}}
+@media(max-width:700px){.hero{min-height:285px}.hero-figure{inset:0 0 0 12%;opacity:.65}.hero:before{background:linear-gradient(90deg,#05080df2,#05080d8a 68%,#05080d40),linear-gradient(0deg,#05080de8,transparent 60%)}.hero-text{max-width:92%;padding:24px 18px}.hero h1{font-size:30px}.hero-dots:before{display:none}.post-art{min-height:230px}.post-art:before{font-size:6px}}
