@@ -19,6 +19,10 @@ create table if not exists public.posts (
   created_at timestamptz not null default now(),
   constraint posts_content_or_media check (length(trim(content)) > 0 or media_path is not null)
 );
+do $ begin
+  alter table public.posts add constraint posts_profile_fk foreign key (user_id) references public.profiles(id) on delete cascade;
+exception when duplicate_object then null;
+end $;
 create index if not exists posts_created_at_idx on public.posts(created_at desc);
 create index if not exists posts_user_id_idx on public.posts(user_id);
 
