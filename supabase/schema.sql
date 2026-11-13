@@ -160,7 +160,7 @@ values (
   104857600,
   array[
     'image/jpeg', 'image/png', 'image/webp', 'image/gif',
-    'audio/mpeg', 'audio/wav', 'audio/mp4',
+    'audio/mpeg', 'audio/wav', 'audio/mp4', 'audio/ogg', 'audio/aac', 'audio/flac',
     'video/mp4', 'video/webm', 'video/quicktime'
   ]
 )
