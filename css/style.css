@@ -36,3 +36,65 @@
 @media(max-width:1200px){.topbar{padding:0 14px}.brand{min-width:310px}.layout{grid-template-columns:230px minmax(0,1fr) 300px}.story-row .avatar{width:56px;height:56px}}
 @media(max-width:900px){.layout{grid-template-columns:220px minmax(0,1fr)}.right{display:none}.brand{min-width:270px}.topbar{gap:12px}}
 @media(max-width:720px){.topbar{height:64px;padding:0 10px;gap:8px}.brand{min-width:0}.layout{display:block;margin:0;padding:0 9px 95px}.hero{height:210px}.hero-text{left:35%;right:2%;width:63%;top:31%}.hero h1{font-size:clamp(16px,4.2vw,26px)}.hero h2{font-size:8px;letter-spacing:1px}.hero-figure{width:40%}.post-art{height:170px}.playerbar{height:72px;padding:7px 9px}.player-controls{gap:7px;margin:0}.player-controls .main-play{width:39px;height:39px}.progress{display:none}}
+
+/* NEURAL AUDIO 2050 — high fidelity art direction */
+:root{--red:#ff182d;--hot:#ff3045;--steel:#87909a}
+body{background:#050609 url("https://img-cdn.pixlr.com/image-generator/demo/pixlr-image-generator-example-2.webp") center/cover fixed;background-blend-mode:soft-light}
+.topbar{height:92px;padding:0 24px;border:1px solid #6f7881;border-bottom:3px solid #bd1728;border-radius:0 0 16px 16px;background:linear-gradient(105deg,#06070b 0%,#101217 36%,#07080c 70%,#151015);box-shadow:0 5px 20px #000,inset 0 0 22px #7b152433}
+.brand{min-width:500px;gap:14px}.brand-mark{font-size:0;width:76px;height:56px;display:block;position:relative;background:linear-gradient(90deg,transparent,#ef1d32,transparent);clip-path:polygon(0 43%,10% 43%,10% 25%,18% 25%,18% 65%,26% 65%,26% 8%,34% 8%,34% 85%,43% 85%,43% 0,51% 0,51% 100%,60% 100%,60% 22%,68% 22%,68% 70%,76% 70%,76% 36%,85% 36%,85% 56%,100% 56%,100% 64%,83% 64%,83% 45%,70% 45%,70% 80%,58% 80%,58% 10%,53% 10%,53% 92%,40% 92%,40% 14%,36% 14%,36% 72%,23% 72%,23% 34%,14% 34%,14% 52%,0 52%);filter:drop-shadow(0 0 8px #f22}
+.brand strong{font:700 23px var(--display);letter-spacing:.4px}.brand small{font-size:10px;letter-spacing:2.4px}
+.search{height:48px;max-width:535px;border-color:#6b6268;background:#08090c;box-shadow:0 0 0 3px #000, inset 0 0 15px #000}
+.layout{max-width:1660px;grid-template-columns:275px minmax(470px,1fr) 415px;gap:16px;margin:8px auto 100px;padding:0 12px}
+.panel{border:1px solid #5b4a4e;border-radius:15px;background:linear-gradient(145deg,#0b0c10f2,#030406f7);box-shadow:0 0 0 2px #020203,0 0 15px #ff14251b,inset 0 1px #ffffff12}
+.left{min-height:670px;padding:15px 13px;background:linear-gradient(90deg,#050608,#08090c 65%,#0d0a0d);border-color:#5b3037;box-shadow:inset -4px 0 14px #f0192b12,0 0 18px #000}
+.sidenav a{height:49px;font-size:16px;padding-left:15px}.sidenav a.active{background:linear-gradient(90deg,#c20d21,#31070d 90%);border:2px solid #ff273a;box-shadow:0 0 20px #fa1e3c77,inset 0 0 18px #ff233b55}
+.collections{border-top-color:#604047}.collections h4{font-size:12px}.collections p{font-size:14px;margin:10px 0}.mini-art{width:43px;height:43px;border-radius:8px}
+.factory{min-height:70px;border:2px solid #d7192c;box-shadow:0 0 18px #e7192c44,inset 0 0 18px #e7192c22}
+.hero{height:250px;margin-bottom:13px;border:1px solid #8b3744;background:linear-gradient(90deg,#05070c00 0%,#06070b00 40%,#09070c35 100%),url("https://img-cdn.pixlr.com/image-generator/demo/pixlr-image-generator-example-2.webp") center 42%/cover;box-shadow:0 0 18px #f21c3625,inset 0 0 30px #000}
+.hero:before{background:linear-gradient(90deg,#03060a00 0 34%,#08080e44 47%,#05060977 100%),linear-gradient(0deg,#03050a55,transparent 55%)}
+.hero-figure{left:0;right:auto;width:43%;height:100%;background:url("https://image.cdn2.seaart.ai/2023-07-05/41806503583813/7a8d823e435fd4a5541a7b43989e1024efa1777a_high.webp") 42% 27%/cover no-repeat;mix-blend-mode:normal;mask-image:linear-gradient(90deg,#000 0 72%,transparent 100%);filter:saturate(.88) contrast(1.08)}
+.hero-person,.hero-city{display:none}
+.hero-text{left:39%;right:3%;width:58%;top:34%;text-shadow:0 2px 12px #000}
+.hero h1{font-size:clamp(23px,2.5vw,39px);font-style:italic;text-shadow:0 2px 8px #000,0 0 12px #000}
+.hero h2{font-size:13px;letter-spacing:4px}
+.hero .red-button{border-radius:24px;padding:10px 19px}
+.hero-dots{bottom:8px}
+.composer{margin-bottom:13px;padding:13px 14px;background:linear-gradient(110deg,#08090bf2,#050608f2)}
+.composer-top .avatar{width:59px;height:59px}
+.composer-top input{height:47px;font-size:15px}
+.composer-top .red-button{min-width:132px;font-size:12px}
+.composer-tools{padding:10px 0 0 72px;gap:28px;font-size:15px}
+.post{padding:14px 15px;margin-bottom:13px}
+.post header .avatar{width:52px;height:52px}
+.post>p{font-size:16px;line-height:1.3}
+.post-art{height:195px;border:1px solid #6d3d4b;background:linear-gradient(0deg,#04050b22,#04050b11),url("https://www.codeverse.site/_next/image?q=75&url=%2Fimages%2Fhero-cityscape.png&w=3840") center 47%/cover no-repeat}
+.post-art:before{background:linear-gradient(0deg,#03050bea 0%,transparent 65%)}
+.post-art:after{display:none}
+.post-art>span{display:none}
+.post-art>button{width:66px;height:66px;background:#08090dbb;border:2px solid #fff;box-shadow:0 0 18px #000}
+.post-art>small{font:700 12px var(--body)}
+.post-actions{gap:22px;padding-top:10px}
+.post-actions button{font-size:17px}
+.right{gap:13px}
+.side-card{padding:15px 17px}
+.side-head{margin-bottom:17px}
+.side-head h3{font:700 18px var(--body)}
+.story-row .avatar{width:76px;height:76px;border:2px solid #f22;box-shadow:0 0 0 3px #151015,0 0 15px #ff1b36a8}
+.story-row small{font-size:13px}
+.recommend{margin:13px 0;gap:12px}
+.recommend .avatar{width:58px;height:58px}
+.recommend b{font-size:16px}
+.recommend small{font-size:13px}
+.follow{min-width:78px;border-width:2px;border-radius:10px;padding:8px 12px;box-shadow:0 0 10px #f22a3b38}
+.now-playing{padding:14px 16px;background:linear-gradient(120deg,#08090df5,#171014f5)}
+.album{width:66px;height:62px}
+.playerbar{height:84px;padding:8px 22px;border-top:3px solid #a31c2b;background:linear-gradient(95deg,#07090d,#151116 45%,#07090d);box-shadow:0 -5px 24px #000}
+.playing-art{width:62px;height:60px}
+.playing-meta{min-width:190px}
+.player-controls{gap:21px;margin-right:20px}
+.player-controls .main-play{width:58px;height:58px}
+.visualizer{max-width:230px}
+.progress{width:90px;accent-color:#f22}
+@media(max-width:1300px){.layout{grid-template-columns:245px minmax(0,1fr) 340px}.brand{min-width:370px}.story-row .avatar{width:62px;height:62px}}
+@media(max-width:1000px){.layout{grid-template-columns:230px minmax(0,1fr)}.right{display:none}.brand{min-width:300px}}
+@media(max-width:720px){.topbar{height:66px;padding:0 9px;gap:7px}.brand{min-width:0;gap:5px}.brand-mark{width:36px;height:38px}.brand strong{font-size:10px}.brand small{font-size:6px}.layout{display:block;margin:0;padding:0 8px 94px}.hero{height:210px}.hero-figure{width:43%}.hero-text{left:35%;width:63%;top:30%}.hero h1{font-size:clamp(15px,4.2vw,24px)}.hero h2{font-size:8px;letter-spacing:1.5px}.composer-top .avatar{width:43px;height:43px}.composer-tools{padding-left:2px;gap:14px}.post-art{height:170px}.playerbar{height:72px;padding:6px 8px}.playing-meta{min-width:85px}.player-controls{gap:7px;margin:0}.player-controls .main-play{width:39px;height:39px}.progress{display:none}}
