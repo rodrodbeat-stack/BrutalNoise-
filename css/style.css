@@ -336,3 +336,25 @@ body{background:#030405;font-family:Arial,sans-serif;padding-bottom:76px}.topbar
 .system:after{content:"";position:absolute;left:0;top:0;width:100%;height:1px;background:linear-gradient(90deg,transparent,#6fe0a2,transparent);animation:systemScan 4s linear infinite}
 @keyframes systemScan{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
 @media(max-width:700px){.hero-text:after{font-size:7px;margin-top:8px}.post-art:after{font-size:7px}}
+
+
+/* INDEPENDENT CREATORS — free community identity */
+.free-stamp{
+ display:inline-flex;align-items:center;gap:9px;margin:0 0 2px;
+ padding:7px 10px;border:1px solid #7d3541;border-left:2px solid #ff5262;
+ background:linear-gradient(90deg,#43131d99,#0a0d12c9);
+ color:#f0dce0;font:8px var(--mono);letter-spacing:1.05px;
+ box-shadow:0 0 18px #ed263b16;
+}
+.free-stamp i{font-style:normal;color:#72dba3;text-shadow:0 0 8px #72dba3}
+.hero h2{max-width:440px;line-height:1.8}
+.composer{position:relative}
+.composer:after{content:"CREA SIN PERMISOS · COMPARTE SIN FRONTERAS";display:block;margin:9px 0 0 66px;color:#75828c;font:8px var(--mono);letter-spacing:1.05px}
+.collections h4{color:#d5dce1}
+.section-head h2{letter-spacing:1.1px}
+.recommend .follow{border-color:#3a8d78;color:#8ce0bd;background:#07130f}
+.recommend .follow:hover{background:#0d2a20}
+@media(max-width:700px){
+ .free-stamp{font-size:7px;letter-spacing:.5px;max-width:100%;flex-wrap:wrap}
+ .composer:after{margin-left:0;font-size:7px}
+}
