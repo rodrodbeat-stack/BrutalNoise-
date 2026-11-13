@@ -113,20 +113,20 @@ footer{border-top:1px solid #2a0d12;margin-top:6px}
 @media(max-width:1200px){.app{grid-template-columns:250px minmax(0,1fr) 280px;gap:10px;padding:8px}.tag{display:none}}
 @media(max-width:900px){.app{grid-template-columns:200px minmax(0,1fr) 230px}.sys{display:none}.ov{font-size:18px}.rl .cp h3{font-size:20px}.pr img{width:64px;height:64px}.ctl{gap:18px}.comp .t{min-width:100px}}
 @media(max-width:640px){.app{grid-template-columns:minmax(0,1fr)}.chat{position:static}.chat>.p:first-child{height:480px}#reels,.rl{height:560px}.ic{display:none}.pr img{width:92px;height:92px}}
-\n.audio-preview{width:100%;display:none;align-items:center;gap:10px;padding:10px 12px;border:1px solid #6a1018;background:linear-gradient(90deg,#21070b,#090a0e);color:#eee}.audio-preview.on{display:flex}.audio-preview strong{color:#ff5360;font:11px "Share Tech Mono";overflow-wrap:anywhere}.audio-preview small{color:#8b8e9b}.audio-preview button{margin-left:auto;color:#ff5360}.audio-post{width:100%;margin:12px 0;padding:12px;border:1px solid #6a1018;background:#090a0e}.audio-post audio{width:100%;height:42px;accent-color:#ff1e2d}.audio-post .audio-label{font:11px "Share Tech Mono";color:#ff5360;letter-spacing:2px;margin-bottom:8px}.audio-status{width:100%;font:11px "Share Tech Mono";color:#2ee6b0;min-height:16px}\n</style></head><body>
+\n.audio-preview{width:100%;display:none;align-items:center;gap:10px;padding:10px 12px;border:1px solid #6a1018;background:linear-gradient(90deg,#21070b,#090a0e);color:#eee}.audio-preview.on{display:flex}.audio-preview strong{color:#ff5360;font:11px "Share Tech Mono";overflow-wrap:anywhere}.audio-preview small{color:#8b8e9b}.audio-preview button{margin-left:auto;color:#ff5360}.audio-post{width:100%;margin:12px 0;padding:12px;border:1px solid #6a1018;background:#090a0e}.audio-post audio{width:100%;height:42px;accent-color:#ff1e2d}.audio-post .audio-label{font:11px "Share Tech Mono";color:#ff5360;letter-spacing:2px;margin-bottom:8px}.audio-status{width:100%;font:11px "Share Tech Mono";color:#2ee6b0;min-height:16px}\n.community-library{margin-top:12px}.audio-library{display:flex;flex-direction:column;gap:8px;max-height:390px;overflow:auto;padding:10px 2px}.library-track{display:grid;grid-template-columns:36px minmax(0,1fr) auto;align-items:center;gap:10px;padding:10px;border:1px solid #29232a;background:linear-gradient(100deg,#160b10,#090b10)}.library-track .disc{width:34px;height:34px;display:grid;place-items:center;border:1px solid #b21c2b;border-radius:50%;color:#ff4655}.library-track strong{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#eee;font-size:11px}.library-track small{display:block;color:#8b8d98;font:9px "Share Tech Mono";margin-top:4px}.library-track button{border:1px solid #8f1724;background:#260910;color:#ff5965;padding:8px 10px;font:10px "Share Tech Mono";cursor:pointer}.community-now{margin-top:12px;padding-top:10px;border-top:1px solid #30232a}.community-now small{display:block;color:#ff5360;font:10px "Share Tech Mono";letter-spacing:1px;margin-bottom:8px}.community-now audio{width:100%;height:34px}.audio-library .empty{color:#898b96;font-size:11px;padding:12px}\n</style></head><body>
 <header class="top"><div class="logo"><svg viewBox="0 0 52 36"><path d="M2 18h6l3-12 4 24 4-20 4 14 3-6h8l2-4 3 8h5" fill="none" stroke="#ff1e2d" stroke-width="2.5" stroke-linejoin="round"/></svg><h1>CYBERREELS<em>SKYNET</em></h1></div><div class="tag">› MUSIC FOR A HIGHER REALITY</div><div class="sys"><i></i>SYSTEM ONLINE</div><div class="ic"><span>⌕</span><span>⚙</span><span>☻</span></div></header>
 <div class="app">
 <div class="col chat"><section class="p"><div class="ph"><b>›</b>FACTORY CHAT<a style="color:var(--grn)">● EN LÍNEA (12)</a></div><div id="convs"></div><div class="room"><div class="rh" id="rh"></div><div id="msgs"></div><form id="cf"><input id="ci" placeholder="Transmitir mensaje seguro..." autocomplete="off"><button>↗</button></form></div></section><section class="p art"><img id="sideArt" alt=""><div>“LA MÚSICA NO SOLO SE ESCUCHA... SE SIENTE EN EL NÚCLEO.”<small>— NEURAL AUDIO 2050</small></div></section><div class="ver">v2.5.0<br>BUILD 2026.10.05</div></div>
 <div class="col">
 <section class="p hero"><img id="heroArt" alt=""><small><b>›</b> BIENVENIDO AL</small><h2>NEURAL AUDIO <em>2050</em></h2><small>SONIDOS QUE ACTIVAN TU REALIDAD</small><button class="init" id="init"><span>◉</span>INITIALIZE AUDIO</button></section>
-<section class="p"><div class="ph"><b>›</b>ÁLBUMES DESTACADOS<a>VER TODOS →</a></div><div class="albums" id="albums"></div></section>
+<section class="p"><div class="ph"><b>›</b>ÁLBUMES DESTACADOS<a>VER TODOS →</a></div><div class="albums" id="albums"></div></section><section class="p community-library"><div class="ph"><b>♫</b>BIBLIOTECA LIBRE <a>NEURAL COMMUNITY</a></div><div id="audioLibrary" class="audio-library"><small>Sincronizando transmisiones de la comunidad...</small></div></section>
 <section class="p comp"><img class="av" id="meAv" alt=""><input class="t" id="ct" placeholder="¿Qué estás fabricando?"><button class="cb" id="bImg">▧ FOTO</button><button class="cb" id="bVid">▣ VIDEO</button><button class="cb" id="bAudio">♫ AUDIO</button><button class="pub" id="pub">PUBLICAR ↗</button><input type="file" id="file" hidden><input type="file" id="audioFile" accept="audio/mpeg,audio/wav,audio/ogg,audio/mp4,audio/aac,audio/flac" hidden><div class="audio-preview" id="audioPreview"><span>♫</span><div style="min-width:0"><strong id="audioName"></strong><br><small id="audioSize"></small></div><button type="button" id="audioRemove">✕</button></div><div class="audio-status" id="audioStatus" aria-live="polite"></div><div class="prev" id="prev"><span id="pm"></span><span id="pn" style="flex:1;color:var(--mut)"></span><button class="cb" id="px">✕</button></div></section>
 <div class="tabs"><button class="on" data-t="feed">● FEED</button><button data-t="reels">▣ REELS</button></div>
 <div id="feed"></div>
 <div id="rbox" hidden><div class="rb"><button class="pub" id="rUp">⬆ SUBIR REEL (VIDEO O FOTO)</button><button class="ar" id="rP">▲</button><span id="rC">1 / 1</span><button class="ar" id="rN">▼</button><input type="file" id="rfile" accept="video/*,image/*" hidden></div><div id="reels" tabindex="0"></div></div>
 </div>
 <div class="col">
-<section class="p"><div class="ph">REPRODUCTOR</div><div class="pr"><img id="cov" alt=""><div><h4 id="tn"></h4><small id="ta"></small><small id="tl" style="margin-top:18px"></small></div></div><div class="bar" id="bar"><i id="fill"></i></div><div class="tm" id="tm"></div><div class="ctl"><button id="prev2"><svg viewBox="0 0 20 20"><path d="M3 3h2v14H3zM17 3v14L7 10z"/></svg></button><button class="big" id="pp"></button><button id="next2"><svg viewBox="0 0 20 20"><path d="M15 3h2v14h-2zM3 3l10 7L3 17z"/></svg></button></div><div class="vol"><span>🔊︎</span><input type="range" id="vol" min="0" max="100" value="55"></div></section>
+<section class="p"><div class="ph">REPRODUCTOR</div><div class="pr"><img id="cov" alt=""><div><h4 id="tn"></h4><small id="ta"></small><small id="tl" style="margin-top:18px"></small></div></div><div class="bar" id="bar"><i id="fill"></i></div><div class="tm" id="tm"></div><div class="ctl"><button id="prev2"><svg viewBox="0 0 20 20"><path d="M3 3h2v14H3zM17 3v14L7 10z"/></svg></button><button class="big" id="pp"></button><button id="next2"><svg viewBox="0 0 20 20"><path d="M15 3h2v14h-2zM3 3l10 7L3 17z"/></svg></button></div><div class="vol"><span>🔊︎</span><input type="range" id="vol" min="0" max="100" value="55"></div><div class="community-now"><small>♫ REPRODUCCIÓN COMUNITARIA</small><audio id="communityPlayer" controls preload="none"></audio></div></section>
 <section class="p"><div class="ph">VISUALIZADOR</div><canvas id="cv"></canvas><div class="vz"><span>128 KBPS &nbsp; STEREO</span><span style="color:var(--red)">▮▮▮▮</span></div></section>
 <section class="p"><div class="ph">CYBER TERMINAL</div><div class="term" id="term"></div></section>
 <section class="p"><div class="ph">TUS PUBLICACIONES</div><div class="mine" id="mine"></div></section>
@@ -230,6 +230,25 @@ load(0,0);draw();vz();cnt();
  const db=window.supabase?.createClient(URL,KEY,{auth:{persistSession:true,autoRefreshToken:true}});
  if(!db){console.error("Supabase SDK no disponible");return}
  let guest=null,track=null,busy=false;
+ const library=$("#audioLibrary"),mainPlayer=$("#communityPlayer");
+ function addLibraryTrack(p,url){
+  if(!library)return;
+  const row=document.createElement("div");row.className="library-track";
+  const disc=document.createElement("span");disc.className="disc";disc.textContent="♫";
+  const meta=document.createElement("div");const title=document.createElement("strong");title.textContent=p.content?.trim()||p.file_name||p.media_path.split("/").pop();
+  const sub=document.createElement("small");sub.textContent=new Date(p.created_at||Date.now()).toLocaleDateString("es-CL")+" · ARCHIVO INDEPENDIENTE";
+  meta.append(title,sub);
+  const btn=document.createElement("button");btn.type="button";btn.textContent="▶ ESCUCHAR";
+  btn.addEventListener("click",async()=>{
+   mainPlayer.src=url;mainPlayer.load();
+   const {error}=await mainPlayer.play().then(()=>({})).catch(e=>({error:e}));
+   if(error){status("PULSA PLAY EN EL REPRODUCTOR PRINCIPAL");return}
+   $("#tn").textContent=title.textContent;$("#ta").textContent="NEURAL COMMUNITY";$("#tl").textContent="RECUPERANDO LO OLVIDADO";
+   status("REPRODUCIENDO DESDE BIBLIOTECA COMUNITARIA");
+  });
+  row.append(disc,meta,btn);library.prepend(row);
+ }
+ 
  const status=m=>$("#audioStatus").textContent=m;
  const size=n=>n<1048576?(n/1024).toFixed(0)+" KB":(n/1048576).toFixed(1)+" MB";
  async function identity(){
@@ -266,6 +285,7 @@ load(0,0);draw();vz();cnt();
    const {data:row,error:ins}=await db.from("posts").insert({user_id:guest.id,content:caption,media_path:path,media_type:f.type||"audio/mpeg"}).select("id,content,media_path,media_type,created_at").single();
    if(ins)throw ins;
    const {data:pub}=db.storage.from("neural-media").getPublicUrl(path);
+   addLibraryTrack({...row,file_name:f.name},pub.publicUrl);
    const card=document.createElement("article");card.className="p post";
    const h=document.createElement("div");h.className="phd";h.innerHTML='<img class="av" alt=""><div><b class="u"></b><small>Ahora · Audio comunitario</small></div>';
    h.querySelector(".u").textContent="Operador BrutalNoise";
@@ -283,8 +303,10 @@ load(0,0);draw();vz();cnt();
    guest=await identity();
    const {data,error}=await db.from("posts").select("id,user_id,content,media_path,media_type,created_at").like("media_type","audio/%").order("created_at",{ascending:false}).limit(30);
    if(error)throw error;
+   if(library)library.innerHTML="";
    (data||[]).reverse().forEach(p=>{
     const {data:pub}=db.storage.from("neural-media").getPublicUrl(p.media_path);
+    addLibraryTrack(p,pub.publicUrl);
     const card=document.createElement("article");card.className="p post";
     const h=document.createElement("div");h.className="phd";h.innerHTML='<img class="av" alt=""><div><b class="u"></b><small></small></div>';
     h.querySelector(".u").textContent="Neural community";h.querySelector("small").textContent=new Date(p.created_at).toLocaleString("es-CL")+" · Audio";
