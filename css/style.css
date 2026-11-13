@@ -240,3 +240,54 @@ body{background:#030405;font-family:Arial,sans-serif;padding-bottom:76px}.topbar
 @media (min-width:1400px){
   .right{padding:278px 0 22px 0}
 }
+
+
+/* 2050 — FORGOTTEN MACHINES / robot photo art direction */
+.hero{
+ background:#07090d;
+}
+.hero-figure{
+ width:64%;left:-2%;
+ background-image:
+  linear-gradient(90deg,rgba(3,5,8,.03) 0%,rgba(3,5,8,.08) 48%,rgba(5,7,10,.96) 100%),
+  linear-gradient(0deg,rgba(3,5,8,.58),transparent 55%),
+  url("https://img-v3.deepdreamgenerator.com/1271664/md_o9ujg4_a1d59a56fcab22524eb1f40932477fb20b261812.jpg");
+ background-size:cover;background-position:center,center,center 44%;
+ filter:saturate(.68) contrast(1.2);
+ opacity:.98;
+}
+.hero:before{
+ background:linear-gradient(90deg,#05070b00 0%,#05070b10 35%,#07090ccf 73%,#07090cf5 100%),linear-gradient(0deg,#05070c77,transparent 58%);
+}
+.post-art{
+ background-image:
+  linear-gradient(0deg,rgba(2,5,9,.94),rgba(2,5,9,.05) 62%),
+  linear-gradient(90deg,rgba(4,7,10,.08),rgba(4,7,10,.1)),
+  url("https://wallpapershome.com/images/wallpapers/robot-wallpaper-3840x2160-technology-artificial-intelligence-26082.jpg");
+ background-position:center,center,center 43%;
+ background-size:cover;
+}
+.post-art:before{
+ background:linear-gradient(0deg,#02050bf2 0%,#02050b08 72%),linear-gradient(90deg,#08111b33,transparent 70%);
+}
+.reel-one:before{
+ background-image:linear-gradient(0deg,#020409ed,transparent 90%),url("https://i.fbcd.co/products/resized/resized-750-500/c-1000-designbundle-humanoid-robot-abandoned-city-in-plants06-09-08-8c6cbd810fcd4b3b2089adcc3551baa0882282368e8f611d7bf7791cf3ae8b21.jpg");
+ background-size:cover;background-position:center 40%;
+}
+.reel-two:before{
+ background-image:linear-gradient(0deg,#020409ed,transparent 90%),url("https://images-geeknative-com.exactdn.com/wp-content/uploads/2023/08/25104337/andrewgirdwood_prompt_artificial_intelligence_takeover_apocalyp_d0efb9e5-549d-4069-9beb-ce2310883819.jpg?lossy=1&sharp=1&ssl=1&strip=all");
+ background-size:cover;background-position:center 35%;
+}
+.reel-three:before{
+ background-image:linear-gradient(0deg,#020409ed,transparent 90%),url("https://wallpapershome.com/images/wallpapers/robot-wallpaper-3840x2160-technology-artificial-intelligence-26082.jpg");
+ background-size:cover;background-position:center 50%;
+}
+.reel-tile{border-color:#69414a;box-shadow:inset 0 0 25px #0008}
+.reel-tile:after{background:linear-gradient(0deg,#020409f5 0%,#02040918 78%),linear-gradient(90deg,#ed263b18,transparent 70%)}
+.stories-strip .art1{background-image:linear-gradient(#090b10aa,#090b10aa),url("https://img-v3.deepdreamgenerator.com/1271664/md_o9ujg4_a1d59a56fcab22524eb1f40932477fb20b261812.jpg");background-size:cover;background-position:center}
+.stories-strip .art2{background-image:linear-gradient(#090b10aa,#090b10aa),url("https://i.fbcd.co/products/resized/resized-750-500/c-1000-designbundle-humanoid-robot-abandoned-city-in-plants06-09-08-8c6cbd810fcd4b3b2089adcc3551baa0882282368e8f611d7bf7791cf3ae8b21.jpg");background-size:cover;background-position:center}
+.stories-strip .art3{background-image:linear-gradient(#090b10aa,#090b10aa),url("https://images-geeknative-com.exactdn.com/wp-content/uploads/2023/08/25104337/andrewgirdwood_prompt_artificial_intelligence_apocalyp_d0efb9e5-549d-4069-9beb-ce2310883819.jpg");background-size:cover;background-position:center}
+@media(max-width:700px){
+ .hero-figure{width:100%;opacity:.68}
+ .post-art{background-position:center,center,center}
+}
