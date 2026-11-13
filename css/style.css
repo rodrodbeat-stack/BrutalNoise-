@@ -873,3 +873,23 @@ body{background-image:linear-gradient(90deg,#ffffff04 1px,transparent 1px),linea
  .hero h1{font-size:clamp(23px,7vw,34px)!important}
  .post-art{min-height:245px!important;background-position:center!important}
 }
+
+/* BRAND RESET — BRUTAL NOISE / RECOVER WHAT WAS LEFT BEHIND */
+:root{--acid:#c7b58b;--signal:#c65b42;--rust:#9b5942}
+.brand strong{letter-spacing:2px!important}
+.brand em,.hero h1 em{color:#c65b42!important}
+.brand-mark{color:#c65b42!important}
+.hero{border-color:#765044!important;background-color:#090807!important}
+.hero:before{background:linear-gradient(90deg,#080706f5 0%,#080706c9 44%,#08070630 100%),repeating-linear-gradient(0deg,#ffffff08 0 1px,transparent 1px 4px)!important}
+.hero-text>small,.free-stamp{color:#d7b49a!important;border-color:#9b5942!important}
+.hero h2{color:#d2c5b2!important;letter-spacing:1.6px!important}
+.red-button{background:linear-gradient(135deg,#9f392e,#5f211d)!important;border-color:#c65b42!important}
+.sidenav a.active{background:#2b1714!important;color:#e2b9a0!important;border-left-color:#c65b42!important}
+.panel,.post,.side-card,.reels-card,.now-playing{border-color:#49352d!important;background:linear-gradient(145deg,#11100e,#090909)!important}
+.collections h4,.section-head small,.side-head h3{color:#c7a58d!important}
+.post-art:before,.post-art:after{color:#d6b99e!important;border-color:#95624c!important}
+.playerbar{border-top-color:#80503c!important;background:#080706f5!important}
+.playerbar button,.player-controls .main-play{color:#e0b9a0!important}
+.story-row .avatar,.recommend .avatar,.mini-art{filter:sepia(.2) saturate(.85)!important}
+.composer-tools #uploadStatus,.system small,.bottom span{color:#b89a83!important}
+::selection{background:#8e3c2d;color:#fff}
