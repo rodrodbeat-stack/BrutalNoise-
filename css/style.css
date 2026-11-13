@@ -568,3 +568,73 @@ body{
  .visualizer,.time,.volume{display:none}
  .progress{width:58px;min-width:58px}
 }
+
+
+/* DETAIL PASS 04 — interface hierarchy and creator-feed finish */
+.topbar{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.brand{gap:11px}
+.brand strong{letter-spacing:1.15px}
+.brand strong small{display:block;margin-top:4px;color:#81909b;font:8px var(--mono);letter-spacing:1.25px}
+.search{border:1px solid #34414b!important;background:linear-gradient(100deg,#080c11,#111820)!important;box-shadow:inset 0 1px #ffffff08}
+.search:focus-within{border-color:#8c3d4a!important;box-shadow:0 0 0 3px #e23c5018, inset 0 1px #ffffff08}
+.topnav button,.topnav a{transition:color .2s,background .2s,border-color .2s}
+.topnav button:hover,.topnav a:hover{color:#ff7886}
+.stories-strip{padding:15px 17px 13px}
+.stories-strip .side-head h3{font:600 13px var(--display);letter-spacing:1.1px;text-transform:uppercase}
+.story-row>div{min-width:58px}
+.story-row .avatar{outline:2px solid #0b1015;outline-offset:2px;transition:transform .2s,box-shadow .2s}
+.story-row>div:hover .avatar{transform:translateY(-3px);box-shadow:0 0 0 3px #0b1015,0 0 20px #e23c5066}
+.story-row small{display:block;margin-top:8px;color:#aeb9c1;font:9px var(--mono);letter-spacing:.35px}
+.hero{min-height:310px}
+.hero:after{mix-blend-mode:screen;opacity:.19}
+.hero-text{padding:30px 28px}
+.hero h1{font-size:clamp(27px,3vw,43px);letter-spacing:.7px;text-shadow:0 4px 22px #000}
+.hero h1 em{color:#f05a6c;text-shadow:0 0 22px #e23c5055}
+.hero .red-button{margin-top:18px;box-shadow:0 7px 22px #e23c5025}
+.composer{padding:17px}
+.composer-top{gap:12px}
+.composer-top .avatar{flex:0 0 42px}
+.composer-tools{padding-top:13px;border-top:1px solid #222d36;margin-top:13px}
+.composer-tools #uploadStatus{margin-left:auto;color:#82909a;font:8px var(--mono);letter-spacing:.75px}
+.post{padding:18px}
+.post header strong{font:700 13px var(--display);letter-spacing:.4px}
+.post header small{display:block;margin-top:4px;color:#82909a;font:9px var(--mono)}
+.post>p{color:#c8d0d6;font-size:13px;line-height:1.7;margin:15px 0}
+.post>p a{color:#d96a79;font-size:11px;letter-spacing:.2px}
+.post-art{min-height:270px}
+.post-art>span{font:600 21px/1.3 var(--display);letter-spacing:2px;text-shadow:0 3px 18px #000}
+.post-art>span b{color:#ff6578}
+.post-actions{padding-top:12px;margin-top:12px;border-top:1px solid #26313a}
+.post-actions button{font:10px var(--mono);letter-spacing:.25px}
+.post-actions button b{font-weight:500;color:#d3dce2}
+.section{padding:19px}
+.section-head small{color:#8a9aa4;font:8px var(--mono);letter-spacing:1.4px}
+.section-head h2{font:600 16px var(--display);letter-spacing:1.25px}
+.section-head #count{padding:6px 8px;border:1px solid #34414b;background:#080d12;color:#9aa8b1;font:8px var(--mono)}
+.right .side-head h3{font:600 11px var(--display);letter-spacing:.8px}
+.reel-tile{border-radius:3px}
+.reel-tile span{font:600 13px/1.3 var(--display);letter-spacing:1.2px}
+.reel-tile small{font:8px var(--mono);letter-spacing:.7px}
+.recommend{padding:11px 0}
+.recommend>span b{font:600 11px var(--display);letter-spacing:.25px}
+.recommend>span small{font:9px var(--mono);color:#87949d}
+.follow{font:9px var(--mono);letter-spacing:.45px}
+#chatMessages{border-left:1px solid #3a4650;margin:12px 0 12px 4px;padding-left:11px;color:#aeb9c1;font-size:11px}
+#chatMessages b{color:#e76b7a;font:10px var(--mono)}
+#chatForm input{background:#080c11;border:1px solid #2c3942;color:#dce3e8}
+#chatForm input:focus{outline:0;border-color:#9a4552}
+.bottom{border-top:1px solid #27323a;padding:15px 4px;color:#73818b;font:8px var(--mono);letter-spacing:.9px}
+.playerbar{backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.playing-meta b{font:600 11px var(--display);letter-spacing:.35px}
+.playing-meta small{font:9px var(--mono);color:#85939d}
+@media(max-width:700px){
+ .hero{min-height:270px}
+ .hero-text{padding:22px 18px}
+ .post{padding:13px}
+ .post-art{min-height:215px}
+ .post-art>span{font-size:16px}
+ .composer{padding:13px}
+ .composer-tools #uploadStatus{width:100%;margin:4px 0 0}
+ .section{padding:14px}
+ .bottom{line-height:1.8}
+}
