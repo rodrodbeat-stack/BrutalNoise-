@@ -185,6 +185,18 @@ body.emergency .logo h1,body.emergency .ph b{animation:breachGlitch 2.2s steps(2
 
 /* BRUTAL SIGNAL STRIP — ambient network activity */
 .signal-strip{max-width:1760px;margin:0 auto 0;padding:8px 22px;display:flex;align-items:center;gap:16px;border-bottom:1px solid #321017;background:linear-gradient(90deg,#110509,#08090c 45%,#0a100e);font:10px "Share Tech Mono";letter-spacing:1.7px;min-height:42px;overflow:hidden}.sig-label{white-space:nowrap;color:#ff5360;font-weight:bold}.sig-label i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 9px var(--red);margin-right:7px;animation:sigBlink 1.4s infinite}.sig-label small{font-size:8px;color:#666;margin-left:6px;border:1px solid #333;padding:2px 4px}.sig-message{color:#c4c7d0;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.sig-wave{display:flex;align-items:center;gap:3px;height:24px}.sig-wave i{width:2px;height:var(--h);max-height:22px;background:#ff2434;opacity:.65;transform:scaleY(.3);animation:sigWave .8s ease-in-out infinite alternate;animation-delay:var(--d);box-shadow:0 0 4px #ff1e2d}.signal-strip button{border:1px solid #66202a;color:#ff5360;background:#18080c;padding:6px 10px;font-size:9px;white-space:nowrap}.signal-strip button:hover,.signal-strip button.pinged{background:#b70e20;color:#fff;box-shadow:0 0 12px #ff1e2d}.signal-strip.pulse{box-shadow:inset 0 0 30px rgba(255,30,45,.3);animation:sigPulse .5s 3}.signal-strip.pulse .sig-message{color:#ff6874}@keyframes sigBlink{50%{opacity:.3}}@keyframes sigWave{to{transform:scaleY(1);opacity:1}}@keyframes sigPulse{50%{background:#30090f}}@media(max-width:820px){.signal-strip{padding:7px 10px;gap:8px}.sig-wave{display:none}.sig-label{font-size:9px}.sig-message{font-size:9px}.signal-strip button{padding:6px 7px;font-size:8px}}
+
+/* BIOMECHANICAL COLUMN SPINE — animated conduit between lanes */
+@media(min-width:821px){
+ .app>.col:nth-child(2){position:relative}
+ .app>.col:nth-child(2)::before,.app>.col:nth-child(2)::after{content:"";position:absolute;top:10px;bottom:10px;width:5px;z-index:4;pointer-events:none;opacity:.72;background:linear-gradient(180,transparent 0%,#330a12 8%,#a81b2a 18%,#280710 26%,#160c10 40%,#7d1725 52%,#21070e 64%,#c72a39 76%,#26070d 88%,transparent 100%);background-size:100% 220%;animation:spineFlow 5s linear infinite;filter:drop-shadow(0 0 4px rgba(255,30,45,.6))}
+ .app>.col:nth-child(2)::before{left:-17px}
+ .app>.col:nth-child(2)::after{right:-17px;animation-delay:-2.4s}
+ .app>.col:nth-child(2){background:radial-gradient(ellipse at left center,rgba(255,30,45,.025),transparent 14px),radial-gradient(ellipse at right center,rgba(46,230,176,.025),transparent 14px)}
+ .app>.col:nth-child(2)::before{box-shadow:0 0 0 1px #27070d,0 0 0 4px rgba(255,30,45,.025}
+}
+@keyframes spineFlow{0%{background-position:0 0;opacity:.4}50%{opacity:.95}100%{background-position:0 220%;opacity:.4}}
+@media(max-width:820px){.app>.col:nth-child(2)::before,.app>.col:nth-child(2)::after{display:none}}
 </style></head><body>
 <header class="top"><div class="logo"><svg viewBox="0 0 52 36"><path d="M2 18h6l3-12 4 24 4-20 4 14 3-6h8l2-4 3 8h5" fill="none" stroke="#ff1e2d" stroke-width="2.5" stroke-linejoin="round"/></svg><h1>BRUTALNOISE<em>UNDERGROUND</em></h1></div><div class="tag">› UNDERGROUND DIGITAL NETWORK</div><button id="emergencyBtn" class="emergency-btn" type="button" aria-pressed="false">⚠ EMERGENCY MODE</button><div class="sys"><i></i>SYSTEM ONLINE</div><div class="ic"><span>⌕</span><span>⚙</span><span>☻</span></div></header>
 <div class="app">
