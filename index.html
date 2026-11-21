@@ -165,6 +165,16 @@ body.emergency::after{content:"";position:fixed;inset:0;z-index:7;pointer-events
 body.emergency .logo h1,body.emergency .ph b{animation:breachGlitch 2.2s steps(2,end) infinite}
 @keyframes alertBlink{50%{opacity:.55}}@keyframes breachScan{to{background-position:0 100px}}@keyframes breachGlitch{0%,94%,100%{transform:none;text-shadow:none}95%{transform:translateX(2px);text-shadow:-2px 0 #00ffd5,2px 0 #ff1e2d}97%{transform:translateX(-2px);text-shadow:2px 0 #ff1e2d}}
 @media(prefers-reduced-motion:reduce){body.emergency::after,.emergency-btn.active,body.emergency .logo h1,body.emergency .ph b{animation:none}}
+
+/* REELS / CENTER LANE REFINEMENT — smooth, viewport-aware */
+@media(min-width:821px){
+ .app>.col:nth-child(2){scroll-behavior:smooth;scrollbar-color:#2b6555 #08090c}
+ #reels{height:calc(100dvh - 210px);min-height:520px;max-height:820px;scroll-behavior:smooth;overscroll-behavior:contain;scroll-snap-type:y mandatory;scroll-padding:8px}
+ #reels::-webkit-scrollbar{width:4px}#reels::-webkit-scrollbar-thumb{background:#2b6555;border-radius:5px}
+ #reels .rl{height:calc(100dvh - 210px);min-height:520px;max-height:820px;scroll-snap-align:start;scroll-snap-stop:always}
+}
+@media(max-width:820px){#reels{height:min(76dvh,680px);min-height:460px;scroll-behavior:smooth;overscroll-behavior:contain}#reels .rl{height:min(76dvh,680px);min-height:460px;scroll-snap-stop:always}}
+@media(prefers-reduced-motion:reduce){#reels{scroll-behavior:auto}}
 </style></head><body>
 <header class="top"><div class="logo"><svg viewBox="0 0 52 36"><path d="M2 18h6l3-12 4 24 4-20 4 14 3-6h8l2-4 3 8h5" fill="none" stroke="#ff1e2d" stroke-width="2.5" stroke-linejoin="round"/></svg><h1>BRUTALNOISE<em>UNDERGROUND</em></h1></div><div class="tag">› UNDERGROUND DIGITAL NETWORK</div><button id="emergencyBtn" class="emergency-btn" type="button" aria-pressed="false">⚠ EMERGENCY MODE</button><div class="sys"><i></i>SYSTEM ONLINE</div><div class="ic"><span>⌕</span><span>⚙</span><span>☻</span></div></header>
 <div class="app">
