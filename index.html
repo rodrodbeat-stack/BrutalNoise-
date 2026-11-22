@@ -365,9 +365,24 @@ load(0,0);draw();vz();cnt();
    if(frame?.src)return {src:frame.src,embed:true,name:"transmisión externa"};
    const direct=$("#mediaUrl")?.value.trim();
    if(direct){
-     const parsed=typeof parseMediaUrl==="function"?parseMediaUrl(direct):null;
-     if(!parsed)return null;
-     return {src:parsed.src,embed:!!parsed.embed,video:!!parsed.v,name:"enlace externo"};
+     try{
+       const u=new URL(direct);
+       if(!["https:","http:"].includes(u.protocol))return null;
+       const host=u.hostname.toLowerCase().replace(/^www\\./,"");
+       let src=u.href,embed=false,video=false;
+       if(host==="youtu.be"||host==="youtube.com"||host.endsWith(".youtube.com")){
+         let id=host==="youtu.be"?u.pathname.split("/").filter(Boolean)[0]:u.searchParams.get("v");
+         if(!id&&u.pathname.startsWith("/embed/"))id=u.pathname.split("/")[2];
+         if(!id&&u.pathname.startsWith("/shorts/"))id=u.pathname.split("/")[2];
+         if(!id)return null;
+         src="https://www.youtube-nocookie.com/embed/"+id;embed=true;
+       }else if(host==="vimeo.com"||host==="player.vimeo.com"){
+         const id=u.pathname.split("/").filter(Boolean).pop();if(!id)return null;
+         src="https://player.vimeo.com/video/"+id;embed=true;
+       }else if(/\\.(mp4|webm|ogg|mov)(\\?|$)/i.test(u.pathname+u.search)){video=true;}
+       else{embed=true;}
+       return {src,embed,video,name:"enlace externo"};
+     }catch(err){return null;}
    }
    return null;
  }
