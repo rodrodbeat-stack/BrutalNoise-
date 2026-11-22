@@ -345,8 +345,8 @@ load(0,0);draw();vz();cnt();
 /* BRUTALNOISE CLOUD FEED PERSISTENCE — posts, photos and videos */
 (()=> {
  const $=s=>document.querySelector(s);
- const URL="https://pwywjfrwqbzsqvhkcmtr.supabase.co";
- const KEY="sb_publishable_Rr_v0IbRX_ajJxHryUCzxQ__nZmQxgH";
+ const URL="https://kuxnduwldypnvojxuqky.supabase.co";
+ const KEY="sb_publishable_fNwVd8guZxjVu9KFsVNyQw_9tONOqWE";
  const db=window.supabase?.createClient(URL,KEY,{auth:{persistSession:true,autoRefreshToken:true}});
  const feed=$("#feed"),publish=$("#pub"),caption=$("#ct"),file=$("#file"),audio=$("#audioFile");
  if(!db||!feed||!publish||!caption)return;
@@ -461,8 +461,8 @@ load(0,0);draw();vz();cnt();
 /* BRUTAL NOISE — publicación de audio persistente en Supabase */
 (()=> {
  const $=s=>document.querySelector(s);
- const URL="https://pwywjfrwqbzsqvhkcmtr.supabase.co";
- const KEY="sb_publishable_Rr_v0IbRX_ajJxHryUCzxQ__nZmQxgH";
+ const URL="https://kuxnduwldypnvojxuqky.supabase.co";
+ const KEY="sb_publishable_fNwVd8guZxjVu9KFsVNyQw_9tONOqWE";
  const db=window.supabase?.createClient(URL,KEY,{auth:{persistSession:true,autoRefreshToken:true}});
  if(!db){console.error("Supabase SDK no disponible");return}
  let guest=null,track=null,busy=false;
