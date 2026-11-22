@@ -364,7 +364,11 @@ load(0,0);draw();vz();cnt();
    const frame=$("#embedPreview iframe");
    if(frame?.src)return {src:frame.src,embed:true,name:"transmisión externa"};
    const direct=$("#mediaUrl")?.value.trim();
-   if(direct)return {src:direct,embed:/youtube|youtu\.be|vimeo/i.test(direct),video:/\.(mp4|webm|ogg)(\?|$)/i.test(direct),name:"enlace externo"};
+   if(direct){
+     const parsed=typeof parseMediaUrl==="function"?parseMediaUrl(direct):null;
+     if(!parsed)return null;
+     return {src:parsed.src,embed:!!parsed.embed,video:!!parsed.v,name:"enlace externo"};
+   }
    return null;
  }
  function renderPost(p,prepend=true){
