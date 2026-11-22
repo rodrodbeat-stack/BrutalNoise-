@@ -614,7 +614,7 @@ load(0,0);draw();vz();cnt();
    status("SUBIENDO AUDIO · "+size(f.size));
    const {error:up}=await db.storage.from("neural-media").upload(path,f,{contentType:f.type||"audio/mpeg",upsert:false});
    if(up)throw up;
-   const {data:row,error:ins}=await db.from("posts").insert({user_id:guest.id,content:caption,media_path:path,media_type:f.type||"audio/mpeg"}).select("id,content,media_path,media_type,created_at").single();
+   const {data:row,error:ins}=await db.from("posts").insert({user_id:guest.id,content:caption,media_path:path,media_type:f.type||"audio/mpeg"}).select("id,user_id,content,media_path,media_type,created_at").single();
    if(ins)throw ins;
    const {data:pub}=db.storage.from("neural-media").getPublicUrl(path);
    addLibraryTrack({...row,file_name:f.name},pub.publicUrl);
