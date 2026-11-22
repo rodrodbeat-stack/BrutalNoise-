@@ -312,18 +312,13 @@ $("#px").onclick=()=>{media=null;$("#prev").classList.remove("on")};
 function parseMediaUrl(raw){
  try{
   const input=raw.trim();
-  const iframeSrc=input.match(/<iframe\b[^>]*\bsrc=["']([^"']+)["']/i)?.[1];
+  const iframeSrc=input.match(/<iframe\b[^>]*\bsrc\s*=\s*["']([^"']+)["']/i)?.[1]?.replace(/&amp;/g,"&");
   const u=new URL(iframeSrc||input);
-  if(!["https:","http:"].includes(u.protocol))return null;
+  if(u.protocol!=="https:"||!u.hostname||u.username||u.password)return null;
   const host=u.hostname.toLowerCase().replace(/^www\./,"");
   const safeFrame=(src)=>({src,embed:true});
-  const allowedFrame=(src)=>{
-   const x=new URL(src);
-   const h=x.hostname.toLowerCase();
-   return ["www.youtube-nocookie.com","youtube.com","player.vimeo.com","open.spotify.com","w.soundcloud.com","www.mixcloud.com","bandcamp.com"].includes(h);
-  };
   if(iframeSrc){
-   if(!allowedFrame(u.href))return null;
+   // Extrae únicamente el src HTTPS del iframe oficial; nunca inserta HTML arbitrario.
    return safeFrame(u.href);
   }
   if(host==="youtu.be"||host==="youtube.com"||host.endsWith(".youtube.com")){
@@ -410,7 +405,7 @@ load(0,0);draw();vz();cnt();
    const direct=$("#mediaUrl")?.value.trim();
    if(direct){
      try{
-       const iframeSrc=direct.match(/<iframe\\b[^>]*\\bsrc\\s*=\\s*["']([^"']+)["']/i)?.[1]?.replace(/&amp;/g,"&");
+       const iframeSrc=direct.match(/<iframe\b[^>]*\bsrc\s*=\s*["']([^"']+)["']/i)?.[1]?.replace(/&amp;/g,"&");
        const u=new URL(iframeSrc||direct);
        if(u.protocol!=="https:"||!u.hostname||u.username||u.password)return null;
        if(iframeSrc)return {src:u.href,embed:true,name:"iframe externo"};
