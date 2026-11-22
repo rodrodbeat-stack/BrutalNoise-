@@ -401,7 +401,7 @@ load(0,0);draw();vz();cnt();
      if(error)throw error;
      const ids=new Set();
      feed.querySelectorAll("[data-cloud-post]").forEach(n=>ids.add(n.dataset.cloudPost));
-     (data||[]).forEach(p=>{
+     (data||[]).slice().reverse().forEach(p=>{
        if((p.media_type||"").startsWith("audio/"))return; // El módulo de audio existente restaura estas pistas.
        if(ids.has(String(p.id)))return;
        const before=feed.children.length;
