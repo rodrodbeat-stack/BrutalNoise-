@@ -310,10 +310,10 @@ $("#px").onclick=()=>{media=null;$("#prev").classList.remove("on")};
 function parseMediaUrl(raw){
  try{
   const input=raw.trim();
-  const iframeSrc=input.match(/<iframe\\b[^>]*\\bsrc=["']([^"']+)["']/i)?.[1];
+  const iframeSrc=input.match(/<iframe\b[^>]*\bsrc=["']([^"']+)["']/i)?.[1];
   const u=new URL(iframeSrc||input);
   if(!["https:","http:"].includes(u.protocol))return null;
-  const host=u.hostname.toLowerCase().replace(/^www\\./,"");
+  const host=u.hostname.toLowerCase().replace(/^www\./,"");
   const safeFrame=(src)=>({src,embed:true});
   const allowedFrame=(src)=>{
    const x=new URL(src);
@@ -332,10 +332,10 @@ function parseMediaUrl(raw){
   }
   if(host==="vimeo.com"||host==="player.vimeo.com"){
    const id=u.pathname.split("/").filter(Boolean).pop();
-   return id&&/^\\d+$/.test(id)?safeFrame("https://player.vimeo.com/video/"+id):null;
+   return id&&/^\d+$/.test(id)?safeFrame("https://player.vimeo.com/video/"+id):null;
   }
   if(host==="open.spotify.com"){
-   const m=u.pathname.match(/^\\/(track|album|playlist|episode|show)\\/([a-zA-Z0-9]+)\\/?$/);
+   const m=u.pathname.match(/^\/(track|album|playlist|episode|show)\/([a-zA-Z0-9]+)\/?$/);
    return m?safeFrame("https://open.spotify.com/embed/"+m[1]+"/"+m[2]):null;
   }
   if(host==="soundcloud.com"||host==="m.soundcloud.com"){
@@ -346,7 +346,7 @@ function parseMediaUrl(raw){
   }
   if(host==="bandcamp.com"&&u.pathname.startsWith("/EmbeddedPlayer/"))return safeFrame(u.href);
   const path=u.pathname.toLowerCase();
-  if(/\\.(mp4|webm|ogg|mov)(\\?|$)/i.test(path+u.search))return{src:u.href,v:true,direct:true};
+  if(/\.(mp4|webm|ogg|mov)(\?|$)/i.test(path+u.search))return{src:u.href,v:true,direct:true};
   return null;
  }catch(err){return null}
 }
