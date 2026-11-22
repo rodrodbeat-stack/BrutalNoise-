@@ -65,6 +65,8 @@ footer{display:flex;justify-content:space-between;align-items:center;padding:14p
 @media(max-width:1150px){.app{grid-template-columns:minmax(0,1fr) 330px}.side{display:none}}
 @media(max-width:820px){.app{grid-template-columns:minmax(0,1fr)}.tag,.ic,.sys{display:none}.albums{grid-template-columns:repeat(2,1fr)}.hero h2{font-size:24px}.hero img{width:80%;opacity:.5}.tr{grid-template-columns:30px 1fr 60px}.tr .a,.tr .b,.tr .k{display:none}.gen{margin:0;width:100%}footer span:nth-child(2){display:none}}
 
+
+.post-delete{margin-left:auto;border:1px solid #8f1724;background:linear-gradient(100deg,#260910,#10090c);color:#ff5965;padding:7px 11px;font:10px "Share Tech Mono";letter-spacing:1px;cursor:pointer}.post-delete:hover{background:#6a1018;color:#fff;box-shadow:0 0 10px #ff1e2d}.post-delete:disabled{opacity:.5;cursor:wait}.post-actions{display:flex;align-items:center;gap:12px;margin-top:10px}
 [hidden]{display:none!important}
 .app{grid-template-columns:minmax(270px,320px) minmax(560px,1fr) minmax(330px,370px);gap:clamp(20px,2vw,32px);max-width:1760px;padding:18px 22px;align-items:start}
 .col{gap:18px;position:relative}
@@ -450,9 +452,25 @@ load(0,0);draw();vz();cnt();
      else {el=document.createElement("a");el.textContent="ABRIR TRANSMISIÓN";el.href=src;el.target="_blank";el.rel="noopener noreferrer";}
      el.src=src;if(el.tagName==="IFRAME")el.className="embed-frame";wrap.append(el);card.append(wrap);
    }
-   const actions=document.createElement("div");actions.className="ac";
-   const like=document.createElement("span");like.textContent="♡ 0";like.title="Las reacciones comunitarias se habilitarán con la tabla de likes";
-   actions.append(like);card.append(actions);
+   card.dataset.postId=String(p.id);card.dataset.ownerId=String(p.user_id||"");
+   const actions=document.createElement("div");actions.className="post-actions";
+   const like=document.createElement("span");like.className="ac";like.textContent="♡ 0";like.title="Las reacciones comunitarias se habilitarán con la tabla de likes";
+   actions.append(like);
+   if(user&&p.user_id===user.id){
+     const del=document.createElement("button");del.type="button";del.className="post-delete";del.textContent="⌫ ELIMINAR";
+     del.addEventListener("click",async()=>{
+       if(!confirm("¿Eliminar definitivamente esta publicación?"))return;
+       del.disabled=true;del.textContent="ELIMINANDO…";
+       try{
+         const {data:deleted,error}=await db.from("posts").delete().eq("id",p.id).eq("user_id",user.id).select("id");
+         if(error)throw error;if(!deleted?.length)throw new Error("No tienes permiso para eliminar esta publicación");
+         if(p.media_path?.startsWith("storage:")){const path=p.media_path.slice(8);const {error:rm}=await db.storage.from("neural-media").remove([path]);if(rm)console.warn("Archivo no eliminado de Storage:",rm.message);}
+         card.remove();status("PUBLICACIÓN ELIMINADA DE NEURAL CLOUD");
+       }catch(err){console.error("Delete post:",err);status("NO SE PUDO ELIMINAR: "+(err.message||"revisa la política DELETE"));del.disabled=false;del.textContent="⌫ ELIMINAR";}
+     });
+     actions.append(del);
+   }
+   card.append(actions);
    prepend?feed.prepend(card):feed.append(card);
  }
  async function restore(){
@@ -528,6 +546,23 @@ load(0,0);draw();vz();cnt();
  if(!db){console.error("Supabase SDK no disponible");return}
  let guest=null,track=null,busy=false;
  const library=$("#audioLibrary"),mainPlayer=$("#communityPlayer");
+ function addDeleteControl(card,p){
+  card.dataset.postId=String(p.id);card.dataset.ownerId=String(p.user_id||"");
+  if(!guest||p.user_id!==guest.id)return;
+  const actions=document.createElement("div");actions.className="post-actions";
+  const del=document.createElement("button");del.type="button";del.className="post-delete";del.textContent="⌫ ELIMINAR";
+  del.addEventListener("click",async()=>{
+   if(!confirm("¿Eliminar definitivamente esta publicación de audio?"))return;
+   del.disabled=true;del.textContent="ELIMINANDO…";
+   try{
+    const {data:deleted,error}=await db.from("posts").delete().eq("id",p.id).eq("user_id",guest.id).select("id");
+    if(error)throw error;if(!deleted?.length)throw new Error("No tienes permiso para eliminar esta publicación");
+    if(p.media_path){const path=p.media_path.startsWith("storage:")?p.media_path.slice(8):p.media_path;const {error:rm}=await db.storage.from("neural-media").remove([path]);if(rm)console.warn("Audio no eliminado de Storage:",rm.message);}
+    card.remove();status("AUDIO ELIMINADO DE NEURAL CLOUD");
+   }catch(err){console.error("Delete audio:",err);status("NO SE PUDO ELIMINAR: "+(err.message||"revisa la política DELETE"));del.disabled=false;del.textContent="⌫ ELIMINAR";}
+  });
+  actions.append(del);card.append(actions);
+ }
  function addLibraryTrack(p,url){
   if(!library)return;
   const row=document.createElement("div");row.className="library-track";
@@ -590,7 +625,7 @@ load(0,0);draw();vz();cnt();
    const player=document.createElement("div");player.className="audio-post";
    const audio=document.createElement("audio");audio.controls=true;audio.preload="metadata";audio.src=pub.publicUrl;
    const name=document.createElement("p");name.className="tx";name.textContent=f.name;
-   player.append(label,name,audio);card.append(h);if(caption){const p=document.createElement("p");p.className="tx";p.textContent=caption;card.append(p)}card.append(player);$("#feed").prepend(card);
+   player.append(label,name,audio);card.append(h);if(caption){const p=document.createElement("p");p.className="tx";p.textContent=caption;card.append(p)}card.append(player);addDeleteControl(card,row);$("#feed").prepend(card);
    $("#ct").value="";clearTrack();status("AUDIO PUBLICADO · DISPONIBLE PARA TODA LA COMUNIDAD ✓");if(typeof log==="function")log("AUDIO TRANSMITTED TO NEURAL CLOUD");
   }catch(err){console.error("Audio upload:",err);status("ERROR DE AUDIO: "+(err.message||"revisa Supabase Storage / RLS"))}
   finally{busy=false;$("#pub").disabled=false}
@@ -610,7 +645,7 @@ load(0,0);draw();vz();cnt();
     const player=document.createElement("div");player.className="audio-post";
     const label=document.createElement("div");label.className="audio-label";label.textContent="♫ TRANSMISIÓN DE AUDIO";
     const audio=document.createElement("audio");audio.controls=true;audio.preload="none";audio.src=pub.publicUrl;
-    player.append(label,audio);card.append(h);if(p.content){const t=document.createElement("p");t.className="tx";t.textContent=p.content;card.append(t)}card.append(player);$("#feed").append(card);
+    player.append(label,audio);card.append(h);if(p.content){const t=document.createElement("p");t.className="tx";t.textContent=p.content;card.append(t)}card.append(player);addDeleteControl(card,p);$("#feed").append(card);
    });
    status("NEURAL CLOUD ONLINE · AUDIO COMUNITARIO SINCRONIZADO");
   }catch(err){console.error("Audio cloud:",err);status("CLOUD NO DISPONIBLE: "+(err.message||"activa Anonymous Sign-Ins"))}
