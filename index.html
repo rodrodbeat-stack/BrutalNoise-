@@ -342,6 +342,121 @@ load(0,0);draw();vz();cnt();
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
+/* BRUTALNOISE CLOUD FEED PERSISTENCE — posts, photos and videos */
+(()=> {
+ const $=s=>document.querySelector(s);
+ const URL="https://pwywjfrwqbzsqvhkcmtr.supabase.co";
+ const KEY="sb_publishable_Rr_v0IbRX_ajJxHryUCzxQ__nZmQxgH";
+ const db=window.supabase?.createClient(URL,KEY,{auth:{persistSession:true,autoRefreshToken:true}});
+ const feed=$("#feed"),publish=$("#pub"),caption=$("#ct"),file=$("#file"),audio=$("#audioFile");
+ if(!db||!feed||!publish||!caption)return;
+ let user=null,busy=false;
+ const status=m=>{const el=$("#audioStatus");if(el)el.textContent=m;};
+ async function identity(){
+   const {data:{session},error}=await db.auth.getSession();if(error)throw error;
+   if(session?.user)return session.user;
+   const {data,error:e}=await db.auth.signInAnonymously({options:{data:{display_name:"Operador BrutalNoise"}}});
+   if(e)throw e;if(!data.user)throw new Error("No se pudo crear la identidad comunitaria");return data.user;
+ }
+ function mediaPreview(){
+   const box=$("#prev"),node=box?.querySelector("img.m,video.m");
+   if(node&&node.src)return {src:node.src,video:node.tagName==="VIDEO",name:$("#pn")?.textContent||"archivo"};
+   const frame=$("#embedPreview iframe");
+   if(frame?.src)return {src:frame.src,embed:true,name:"transmisión externa"};
+   const direct=$("#mediaUrl")?.value.trim();
+   if(direct)return {src:direct,embed:/youtube|youtu\.be|vimeo/i.test(direct),video:/\.(mp4|webm|ogg)(\?|$)/i.test(direct),name:"enlace externo"};
+   return null;
+ }
+ function renderPost(p,prepend=true){
+   const card=document.createElement("article");card.className="p post";
+   const head=document.createElement("div");head.className="phd";
+   const avatar=document.createElement("img");avatar.className="av";avatar.alt="";avatar.src="";
+   const meta=document.createElement("div");const name=document.createElement("b");name.className="u";name.textContent=p.author_name||"Operador comunitario";
+   const when=document.createElement("small");when.textContent=new Date(p.created_at||Date.now()).toLocaleString("es-CL")+" · TRANSMISIÓN ARCHIVADA";
+   meta.append(name,when);head.append(avatar,meta);card.append(head);
+   if(p.content){const t=document.createElement("p");t.className="tx";t.textContent=p.content;card.append(t);}
+   if(p.media_path){
+     const wrap=document.createElement("div");wrap.className="pm";let src=p.media_path;
+     if(p.media_path.startsWith("storage:")){
+       const path=p.media_path.slice(8);const {data}=db.storage.from("neural-media").getPublicUrl(path);src=data.publicUrl;
+     }
+     const type=p.media_type||"";
+     let el;
+     if(type.startsWith("video/")){el=document.createElement("video");el.controls=true;el.playsInline=true;el.preload="metadata";}
+     else if(type.startsWith("image/")){el=document.createElement("img");el.alt="Archivo comunitario";}
+     else if(type==="application/x-brutalnoise-embed"){el=document.createElement("iframe");el.title="Transmisión externa";el.allow="accelerometer;autoplay;encrypted-media;picture-in-picture";el.allowFullscreen=true;}
+     else if(type.startsWith("audio/")){el=document.createElement("audio");el.controls=true;}
+     else {el=document.createElement("a");el.textContent="ABRIR TRANSMISIÓN";el.href=src;el.target="_blank";el.rel="noopener noreferrer";}
+     el.src=src;if(el.tagName==="IFRAME")el.className="embed-frame";wrap.append(el);card.append(wrap);
+   }
+   const actions=document.createElement("div");actions.className="ac";
+   const like=document.createElement("span");like.textContent="♡ 0";like.title="Las reacciones comunitarias se habilitarán con la tabla de likes";
+   actions.append(like);card.append(actions);
+   prepend?feed.prepend(card):feed.append(card);
+ }
+ async function restore(){
+   try{
+     user=await identity();
+     const {data,error}=await db.from("posts").select("id,user_id,content,media_path,media_type,created_at").order("created_at",{ascending:false}).limit(100);
+     if(error)throw error;
+     const ids=new Set();
+     feed.querySelectorAll("[data-cloud-post]").forEach(n=>ids.add(n.dataset.cloudPost));
+     (data||[]).forEach(p=>{
+       if(ids.has(String(p.id)))return;
+       const before=feed.children.length;
+       renderPost(p,true);
+       if(feed.firstElementChild)feed.firstElementChild.dataset.cloudPost=String(p.id);
+     });
+     status("NEURAL CLOUD ONLINE · "+(data?.length||0)+" PUBLICACIONES RECUPERADAS");
+   }catch(e){console.error("BRUTALNOISE feed restore:",e);status("FEED CLOUD: "+(e.message||"revisa permisos de posts / acceso anónimo"));}
+ }
+ publish.addEventListener("click",async e=>{
+   if(audio?.files?.length)return; // El módulo de audio existente gestiona esta publicación.
+   e.preventDefault();e.stopImmediatePropagation();
+   if(busy)return;
+   const text=caption.value.trim(),media=mediaPreview();
+   if(!text&&!media){status("ESCRIBE UNA PUBLICACIÓN O ADJUNTA UN ARCHIVO");return;}
+   busy=true;publish.disabled=true;status("CONECTANDO CON NEURAL CLOUD...");
+   let uploadedPath=null;
+   try{
+     user=user||await identity();
+     let mediaPath=null,mediaType=null;
+     if(media){
+       mediaType=media.embed?"application/x-brutalnoise-embed":media.video?"video/mp4":"image/jpeg";
+       if(media.src.startsWith("data:")){
+         const blob=await (await fetch(media.src)).blob();
+         mediaType=blob.type||mediaType;
+         const ext=mediaType.split("/")[1]?.replace(/[^a-z0-9]/gi,"")||"bin";
+         uploadedPath=user.id+"/"+crypto.randomUUID()+"."+ext;
+         const {error:up}=await db.storage.from("neural-media").upload(uploadedPath,blob,{contentType:mediaType,upsert:false});
+         if(up)throw up;
+         mediaPath="storage:"+uploadedPath;
+       }else{
+         mediaPath=media.src;
+       }
+     }
+     const {data:row,error}=await db.from("posts").insert({
+       user_id:user.id,content:text,media_path:mediaPath,media_type:mediaType
+     }).select("id,user_id,content,media_path,media_type,created_at").single();
+     if(error)throw error;
+     renderPost(row,true);
+     if(feed.firstElementChild)feed.firstElementChild.dataset.cloudPost=String(row.id);
+     caption.value="";
+     if($("#prev"))$("#prev").classList.remove("on");
+     if($("#embedPreview")){$("#embedPreview").classList.remove("on");$("#embedPreview").innerHTML="";}
+     if($("#mediaUrl"))$("#mediaUrl").value="";
+     status("PUBLICACIÓN GUARDADA EN NEURAL CLOUD ✓");
+     if(typeof log==="function")log("COMMUNITY POST PERSISTED");
+   }catch(err){
+     console.error("BRUTALNOISE publish:",err);
+     if(uploadedPath){try{await db.storage.from("neural-media").remove([uploadedPath]);}catch(cleanup){}}
+     status("NO SE PUBLICÓ: "+(err.message||"revisa tabla posts y políticas Storage"));
+   }finally{busy=false;publish.disabled=false;}
+ },true);
+ restore();
+})();
+</script>
+<script>
 /* BRUTAL NOISE — publicación de audio persistente en Supabase */
 (()=> {
  const $=s=>document.querySelector(s);
