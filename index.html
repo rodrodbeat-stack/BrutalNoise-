@@ -352,7 +352,7 @@ function parseMediaUrl(raw){
   return null;
  }catch(err){return null}
 }
-$("#urlPreviewBtn").onclick=()=>{const parsed=parseMediaUrl($("#mediaUrl").value),box=$("#embedPreview");box.innerHTML="";if(!parsed){box.innerHTML="<small>URL no compatible. Usa YouTube, Vimeo, Spotify, SoundCloud, Mixcloud, código iframe oficial de Bandcamp o enlace directo MP4/WebM.</small>";box.classList.add("on");return}media=parsed;if(parsed.embed){const frame=document.createElement("iframe");frame.src=parsed.src;frame.title="Vista previa de video";frame.allow="accelerometer;autoplay;encrypted-media;picture-in-picture";frame.allowFullscreen=true;box.append(frame)}else{const v=document.createElement("video");v.src=parsed.src;v.controls=true;box.append(v)}const note=document.createElement("small");note.textContent="URL PREPARADA PARA PUBLICAR";box.append(note);box.classList.add("on");$("#prev").classList.remove("on");toast("URL preparada")};
+$("#urlPreviewBtn").onclick=()=>{const parsed=parseMediaUrl($("#mediaUrl").value),box=$("#embedPreview");box.innerHTML="";if(!parsed){box.innerHTML="<small>URL no compatible. Usa YouTube, Vimeo, Spotify, SoundCloud, Mixcloud, código iframe oficial de Bandcamp o enlace directo MP4/WebM.</small>";box.classList.add("on");return}media=parsed;if(parsed.embed){const frame=document.createElement("iframe");frame.src=parsed.src;frame.title="Vista previa de video";frame.allow="accelerometer;autoplay;encrypted-media;picture-in-picture";frame.allowFullscreen=true;frame.setAttribute("sandbox","allow-scripts allow-same-origin allow-forms allow-presentation");frame.referrerPolicy="strict-origin-when-cross-origin";box.append(frame)}else{const v=document.createElement("video");v.src=parsed.src;v.controls=true;box.append(v)}const note=document.createElement("small");note.textContent="URL PREPARADA PARA PUBLICAR";box.append(note);box.classList.add("on");$("#prev").classList.remove("on");toast("URL preparada")};
 $("#mediaUrl").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();$("#urlPreviewBtn").click()}});
 $("#pub").onclick=()=>{const t=$("#ct").value.trim();if(!t&&!media)return toast("Escribe algo o adjunta una foto, video o URL.");
 feed.prepend(mkPost({user:"darkcode_2050",av:ME,time:"Ahora mismo",text:t,m:media}));save({k:"post",t,m:media});
@@ -410,8 +410,10 @@ load(0,0);draw();vz();cnt();
    const direct=$("#mediaUrl")?.value.trim();
    if(direct){
      try{
-       const u=new URL(direct);
-       if(!["https:","http:"].includes(u.protocol))return null;
+       const iframeSrc=direct.match(/<iframe\\b[^>]*\\bsrc\\s*=\\s*["']([^"']+)["']/i)?.[1]?.replace(/&amp;/g,"&");
+       const u=new URL(iframeSrc||direct);
+       if(u.protocol!=="https:"||!u.hostname||u.username||u.password)return null;
+       if(iframeSrc)return {src:u.href,embed:true,name:"iframe externo"};
        const host=u.hostname.toLowerCase().replace(/^www\\./,"");
        let src=u.href,embed=false,video=false;
        if(host==="youtu.be"||host==="youtube.com"||host.endsWith(".youtube.com")){
@@ -450,7 +452,7 @@ load(0,0);draw();vz();cnt();
      else if(type==="application/x-brutalnoise-embed"){el=document.createElement("iframe");el.title="Transmisión externa";el.allow="accelerometer;autoplay;encrypted-media;picture-in-picture";el.allowFullscreen=true;}
      else if(type.startsWith("audio/")){el=document.createElement("audio");el.controls=true;}
      else {el=document.createElement("a");el.textContent="ABRIR TRANSMISIÓN";el.href=src;el.target="_blank";el.rel="noopener noreferrer";}
-     el.src=src;if(el.tagName==="IFRAME")el.className="embed-frame";wrap.append(el);card.append(wrap);
+     el.src=src;if(el.tagName==="IFRAME"){el.className="embed-frame";el.setAttribute("sandbox","allow-scripts allow-same-origin allow-forms allow-presentation");el.referrerPolicy="strict-origin-when-cross-origin";}wrap.append(el);card.append(wrap);
    }
    card.dataset.postId=String(p.id);card.dataset.ownerId=String(p.user_id||"");
    const actions=document.createElement("div");actions.className="post-actions";
